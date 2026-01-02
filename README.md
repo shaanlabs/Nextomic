@@ -1,470 +1,345 @@
-# Nextomic – Complete Finance Solutions
+# 💼 Nextomic - Enterprise FinTech Platform
 
-[![Nextomic](https://img.shields.io/badge/Nextomic-Finance%20Solutions-blue?style=for-the-badge&logo=finance)](https://github.com/shaanlabs/Nextomic.git)
-[![HTML5](https://img.shields.io/badge/HTML5-51.8%25-orange?style=flat&logo=html5)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-26.8%25-blue?style=flat&logo=css3)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-21.4%25-yellow?style=flat&logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+> Modern, mobile-first financial technology platform showcasing 47+ enterprise-level solutions across AI/ML, Blockchain, RegTech, and Trading.
 
-> **Empowering Your Financial Future** - A modern, responsive multi-page finance website offering AI-powered financial solutions and comprehensive money management tools.
+[![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
+[![Mobile First](https://img.shields.io/badge/Mobile-First-orange)](https://nextomic.com)
+[![Projects](https://img.shields.io/badge/Projects-47+-orange)](https://nextomic.com/portfolio.html)
+
+---
 
 ## 🚀 Overview
 
-Nextomic is a comprehensive financial technology platform that provides users with AI-powered budgeting, investment insights, expense tracking, and portfolio management. Built with modern web technologies, it offers a sleek, professional interface designed for financial startups and users seeking intelligent financial solutions.
+Nextomic is a comprehensive financial technology platform featuring cutting-edge solutions in:
+- 🤖 **AI/ML Finance** - Investment intelligence, credit scoring, robo-advisors
+- ⛓️ **Blockchain** - Digital identity, smart contracts, tokenized assets
+- 📋 **RegTech** - AML, compliance automation, fraud detection
+- 📈 **Trading** - AI-powered trading systems, market sentiment analysis
+- 🏢 **Enterprise** - Treasury management, CFO dashboards, payroll engines
 
-**Owned by AtomNext Solutions**
+---
 
-## ✨ New Features Added
+## ✨ Features
 
-### 🎨 **Dark Mode Theme Toggle**
-- **System-wide dark/light theme switching**
-- **Persistent theme preferences** using localStorage
-- **Smooth theme transitions** with automatic chart updates
-- **Accessibility-focused** with proper contrast ratios
+### 🎨 Modern Design
+- Clean, minimalist GitHub-inspired UI
+- Gen Z-friendly aesthetic
+- Consistent orange (#FF6D1F) and beige (#FAF3E1) color palette
+- Smooth animations and micro-interactions
 
-### 📊 **Advanced Portfolio Manager**
-- **Real-time portfolio tracking** with interactive charts
-- **Asset allocation visualization** with donut charts
-- **Performance analytics** including Sharpe ratio, Beta, Alpha
-- **Holdings management** with add/edit/delete functionality
-- **Export capabilities** for portfolio data
-- **Responsive dashboard** with mobile optimization
+### 📱 Mobile-First
+- Optimized for 90% mobile users
+- Working hamburger navigation menu
+- Responsive design (320px to 1920px+)
+- Touch-friendly 44px minimum tap targets
 
-### 💰 **Smart Expense Tracker**
-- **Comprehensive expense management** with categorization
-- **Budget setting and monitoring** with progress indicators
-- **AI-powered spending insights** and recommendations
-- **Visual spending analytics** with category breakdowns
-- **Monthly/yearly spending trends** with time-based filtering
-- **Export functionality** for expense data
+### 💼 Enterprise Portfolio (47 Projects)
+Showcasing expertise in:
+- **AI/ML** (15 projects): TensorFlow, LLMs, NLP, Computer Vision
+- **Blockchain** (8 projects): Ethereum, Solidity, Smart Contracts, Web3
+- **FinTech** (12 projects): Payment gateways, digital banking, wealth management
+- **RegTech** (6 projects): Compliance, AML, fraud detection
+- **Trading** (5 projects): Algorithmic trading, market analysis
+- **Enterprise** (9 projects): Treasury, payroll, risk management
 
-### 🤖 **Enhanced AI Features**
-- **Contextual AI insights** for spending patterns
-- **Budget optimization recommendations**
-- **Savings opportunity identification**
-- **Predictive financial analytics**
-- **Smart investment suggestions**
+### 🛠️ Interactive Tools (8 Calculators)
+1. **EMI Calculator** - Loan installment calculations
+2. **Savings Goal** - Monthly savings planner
+3. **Investment Returns** - Compound interest calculator
+4. **Tax Calculator** - Income tax estimator
+5. **Retirement Planner** - Long-term financial planning
+6. **SIP Calculator** - Systematic investment planning
+7. **Budget Calculator** - 50/30/20 budgeting rule
+8. **Debt Payoff** - Debt elimination timeline
 
-### 🔧 **User Experience Improvements**
-- **Smooth animations** with Anime.js throughout
-- **Interactive modals** with form validation
-- **Notification system** for user feedback
-- **Loading states** and skeleton screens
-- **Mobile-first responsive design**
+### 📝 Blog & Resources
+- 10+ articles on investing, budgeting, and fintech
+- Category-based filtering
+- Expert insights and practical tips
 
-## 📋 Table of Contents
+---
 
-- [Features](#features)
-- [Pages & Sections](#pages--sections)
-- [Technologies Used](#technologies-used)
-- [Installation & Setup](#installation--setup)
-- [Project Structure](#project-structure)
-- [Key Features](#key-features)
-- [AI-Powered Tools](#ai-powered-tools)
-- [Real-Time Data](#real-time-data)
-- [Theme System](#theme-system)
-- [Browser Support](#browser-support)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+## 🛠️ Tech Stack
 
-## 🎯 Core Features
+### Frontend
+- **HTML5** - Semantic markup
+- **CSS3** - Modern styling with custom properties
+- **JavaScript (ES6+)** - Interactive features
+- **Font Awesome** - Icon library
+- **Google Fonts (Inter)** - Typography
 
-### 💼 **Financial Management Suite**
-- **Multi-page Responsive Website** - Complete financial platform with 10+ pages
-- **Portfolio Management** - Track investments with performance analytics
-- **Expense Tracking** - Smart categorization and budget management  
-- **AI-Powered Financial Tools** - Intelligent insights and recommendations
-- **Real-Time Data Integration** - Live currency rates and stock market data
-- **Interactive Financial Calculators** - EMI, savings, and investment tools
-- **Modern UI/UX Design** - Glass morphism, gradients, and smooth animations
-- **Mobile-First Responsive Design** - Optimized for all devices
+### Design Principles
+- Mobile-first responsive design
+- CSS Grid & Flexbox layouts
+- CSS custom properties for theming
+- Progressive enhancement
+- Accessibility (WCAG 2.1)
 
-### 🤖 **AI-Powered Features**
-- **AI Financial Insights Dashboard** - Market sentiment, risk assessment, smart recommendations
-- **Enhanced AI Chat Assistant** - Context-aware financial advice with typing indicators
-- **Smart Portfolio Builder** - Risk-based allocation with visual charts
-- **AI Risk Assessment Tool** - Personalized investment recommendations
-- **Spending Pattern Analysis** - AI-driven expense insights
-- **Budget Optimization** - Automated savings suggestions
-- **Predictive Analytics** - Market trend predictions and analysis
+### Technologies Showcased (Portfolio Projects)
+- **AI/ML**: TensorFlow, PyTorch, LLMs (GPT), XGBoost, Prophet
+- **Blockchain**: Ethereum, Solidity, Smart Contracts, IPFS, Web3
+- **Backend**: Python, Node.js, Java, Spring Boot, FastAPI
+- **Data**: Kafka, Spark, PostgreSQL, MongoDB, Redis
+- **Cloud**: Kubernetes, Docker, AWS, GCP, Azure
 
-### 📊 **Real-Time Features**
-- **Live Currency Exchange Rates** - Real-time forex data via API
-- **Stock Market Ticker** - Live stock prices and market updates
-- **Dynamic Data Updates** - Automatic refresh every 30 seconds
-- **Fallback Data System** - Robust error handling with dummy data
-- **Real-time Portfolio Tracking** - Live investment value updates
+---
 
-## 📄 Pages & Sections
-
-### 🏠 **Homepage** (`index.html`)
-- **Hero Section** - Animated landing with call-to-action buttons
-- **Real-Time Widgets** - Currency exchange and stock ticker
-- **AI Insights Dashboard** - Market sentiment and risk assessment
-- **Why Choose Nextomic** - Feature cards with animations
-- **Statistics Counter** - Animated metrics display
-- **Floating Cards** - Interactive financial highlights
-
-### 💼 **Portfolio Manager** (`portfolio.html`) - **NEW**
-- **Portfolio Overview** - Total value, daily changes, returns
-- **Performance Charts** - Interactive time-range selection
-- **Asset Allocation** - Visual breakdown with rebalancing
-- **Holdings Table** - Complete investment tracking
-- **Analytics Dashboard** - Risk metrics and performance ratios
-- **Add/Edit Investments** - Modal-based investment management
-
-### 💰 **Expense Tracker** (`expense-tracker.html`) - **NEW**
-- **Smart Dashboard** - Monthly spending overview
-- **Quick Actions** - Add expenses, set budgets, export data
-- **Spending Analytics** - Category breakdowns and trends
-- **Budget Management** - Progress tracking and alerts
-- **AI Insights** - Spending pattern analysis and optimization tips
-- **Transaction History** - Comprehensive expense logging
-
-### 🛠️ **Services Page** (`services.html`)
-- **Personal Finance Management**
-- **Investment Planning**
-- **Loan Advisory**
-- **Tax Calculators**
-- **AI-driven Expense Tracker**
-- **Budget Planner**
-
-### 🤖 **AI Tools Page** (`ai-tools.html`)
-- **AI Chat Assistant** - Financial query support
-- **AI Spending Analyzer** - Expense pattern recognition
-- **Investment Prediction** - Market trend analysis
-- **Smart Portfolio Builder** - Dynamic allocation tool
-
-### 🧮 **Financial Tools** (`tools.html`)
-- **EMI Calculator** - Interactive loan calculator with sliders
-- **Savings Goal Tracker** - Progress visualization with milestones
-- **Investment Calculator** - ROI projections and scenarios
-
-### ⚖️ **AI Risk Assessment** (`ai-risk-assessment.html`)
-- **Risk Profile Questionnaire** - Interactive assessment
-- **Personalized Recommendations** - AI-generated advice
-- **Portfolio Allocation** - Visual allocation charts
-
-### 👥 **About Page** (`about.html`)
-- **Company Story** - Nextomic's journey and mission
-- **Team Members** - Animated team cards
-- **Values & Vision** - Company principles
-
-### 📞 **Contact Page** (`contact.html`)
-- **Contact Form** - Styled with validation
-- **Embedded Map** - Location integration
-- **FAQ Section** - Common questions
-
-### 📝 **Blog Page** (`blog.html`)
-- **Financial Insights** - Educational articles
-- **Market Updates** - Latest financial news
-- **Investment Tips** - Expert advice
-
-## 🛠️ Technologies Used
-
-### **Frontend Technologies**
-- **HTML5** - Semantic markup and structure
-- **CSS3** - Modern styling with Flexbox/Grid, CSS Custom Properties
-- **Vanilla JavaScript** - Interactive functionality and API integration
-- **Anime.js** - Smooth animations and transitions
-- **Chart.js** - Interactive data visualizations
-
-### **External Libraries & APIs**
-- **Google Fonts** - Inter font family for consistent typography
-- **Font Awesome** - Comprehensive icon library
-- **Exchange Rate API** - Live currency data (open.er-api.com)
-- **Yahoo Finance API** - Stock market data (unofficial)
-
-### **Design Features**
-- **Glass Morphism** - Modern UI effects with backdrop blur
-- **Gradient Backgrounds** - Professional aesthetic design
-- **Responsive Grid** - Flexible layouts for all devices
-- **CSS Custom Properties** - Consistent theming system
-- **Dark/Light Themes** - User-preferred theme switching
-
-## 🚀 Installation & Setup
-
-### **Prerequisites**
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- Python 3.x (for local development server)
-- Git (for version control)
-
-### **Quick Start**
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/shaanlabs/Nextomic.git
-   cd Nextomic
-   ```
-
-2. **Navigate to the project directory**
-   ```bash
-   cd Finovix
-   ```
-
-3. **Start the local development server**
-   ```bash
-   python3 -m http.server 8080
-   ```
-
-4. **Open your browser**
-   ```
-   http://localhost:8080
-   ```
-
-### **Alternative Ports**
-If port 8080 is occupied, try:
-```bash
-python3 -m http.server 8000
-# or
-python3 -m http.server 8081
-```
-
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```
 Nextomic/
-├── Finovix/                         # Main project directory
-│   ├── index.html                   # Homepage
-│   ├── portfolio.html               # Portfolio manager (NEW)
-│   ├── expense-tracker.html         # Expense tracker (NEW)
-│   ├── services.html                # Services page
-│   ├── ai-tools.html                # AI tools page
-│   ├── about.html                   # About page
-│   ├── contact.html                 # Contact page
-│   ├── blog.html                    # Blog page
-│   ├── tools.html                   # Financial tools
-│   ├── ai-risk-assessment.html      # AI risk assessment
-│   └── assets/
-│       ├── css/
-│       │   ├── main.css             # Main stylesheet (enhanced)
-│       │   ├── portfolio.css        # Portfolio page styles (NEW)
-│       │   ├── expense-tracker.css  # Expense tracker styles (NEW)
-│       │   ├── services.css         # Services page styles
-│       │   ├── ai-tools.css         # AI tools styles
-│       │   ├── about.css            # About page styles
-│       │   ├── contact.css          # Contact page styles
-│       │   ├── blog.css             # Blog page styles
-│       │   └── tools.css            # Tools page styles
-│       └── js/
-│           ├── main.js              # Main JavaScript (enhanced)
-│           ├── portfolio.js         # Portfolio management (NEW)
-│           ├── expense-tracker.js   # Expense tracking (NEW)
-│           └── risk-assessment.js   # Risk assessment logic
-├── README.md                        # Project documentation
-└── manifest.json                    # PWA manifest
+├── index.html              # Homepage
+├── portfolio.html          # 47 enterprise projects showcase
+├── demo.html              # 8 interactive financial tools
+├── blog.html              # Financial insights & articles
+├── about.html             # About page
+├── services.html          # Services overview
+├── calculator.html        # All-in-one financial calculator
+├── expense-tracker.html   # Expense tracking tool
+├── tools.html             # Financial tools
+├── contact.html           # Contact page
+├── assets/
+│   ├── css/
+│   │   ├── theme.css      # Mobile-first theme
+│   │   ├── components.css # Reusable components
+│   │   └── main.css       # Main styles
+│   └── js/
+│       └── main.js        # Interactive features & hamburger menu
+└── README.md              # This file
 ```
 
-## 🔑 Key Features
+---
 
-### 🎨 **Modern Design System**
-- **Color Scheme**: Professional blues, whites, and gradients
-- **Typography**: Inter font family for optimal readability
-- **Animations**: Smooth transitions with Anime.js
-- **Glass Morphism**: Modern UI effects with backdrop blur
-- **Dark/Light Themes**: User-controlled theme switching
+## 🚀 Quick Start
 
-### 📱 **Responsive Design**
-- **Mobile-First**: Optimized for mobile devices
-- **Flexible Grid**: CSS Grid and Flexbox layouts
-- **Media Queries**: Breakpoint-based responsive design
-- **Touch-Friendly**: Optimized for touch interactions
-- **Cross-Platform**: Consistent experience across devices
+### Prerequisites
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- Local web server (optional, for development)
 
-### ⚡ **Performance Optimizations**
-- **Lazy Loading**: Images and content loading strategies
-- **Efficient Animations**: Hardware-accelerated CSS transitions
-- **Caching**: Browser caching strategies for assets
-- **CDN Integration**: External library loading optimization
-- **Code Splitting**: Modular JavaScript architecture
+### Installation
 
-### 🔒 **Security & Accessibility**
-- **Form Validation**: Client-side input validation
-- **XSS Protection**: Sanitized user inputs
-- **HTTPS Ready**: Secure connection support
-- **API Security**: Safe external API calls
-- **A11y Support**: Screen reader compatibility
-- **Keyboard Navigation**: Full keyboard accessibility
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/nextomic.git
+cd nextomic
+```
 
-## 🤖 AI-Powered Tools
+2. **Open in browser**
+```bash
+# Option 1: Open directly
+open index.html
 
-### **AI Financial Insights Dashboard**
-- **Market Sentiment Analysis** - Real-time market mood assessment
-- **Risk Assessment** - Personalized risk profile evaluation
-- **Smart Recommendations** - AI-generated financial advice
-- **Predictive Analytics** - Market trend predictions
+# Option 2: Use a local server (recommended)
+python -m http.server 8000
+# Then visit http://localhost:8000
 
-### **Enhanced AI Chat Assistant**
-- **Context-Aware Responses** - Intelligent conversation handling
-- **Financial Expertise** - Specialized financial knowledge base
-- **Typing Indicators** - Realistic chat experience
-- **Multi-turn Conversations** - Complex query handling
+# Option 3: Use VS Code Live Server
+# Right-click index.html → Open with Live Server
+```
 
-### **Smart Portfolio Builder**
-- **Risk-Based Allocation** - Personalized portfolio suggestions
-- **Visual Charts** - Interactive allocation visualization
-- **Performance Tracking** - Portfolio monitoring tools
-- **Rebalancing Alerts** - Automated portfolio management
+3. **Start exploring!**
+- Visit the portfolio to see 47 enterprise projects
+- Try the interactive demo tools
+- Read financial insights on the blog
 
-### **AI Risk Assessment Tool**
-- **Interactive Questionnaire** - Comprehensive risk evaluation
-- **Algorithm Scoring** - Advanced risk calculation methods
-- **Personalized Recommendations** - Tailored investment advice
-- **Portfolio Allocation** - Visual allocation charts
-
-## 📊 Real-Time Data Integration
-
-### **Currency Exchange Rates**
-- **API Source**: `open.er-api.com`
-- **Update Frequency**: Every 30 seconds
-- **Supported Currencies**: USD, EUR, GBP, JPY, AUD, CAD
-- **Fallback System**: Dummy data when API unavailable
-
-### **Stock Market Data**
-- **API Source**: `query1.finance.yahoo.com`
-- **Real-Time Updates**: Live price tracking
-- **Market Indicators**: Price changes and percentages
-- **Error Handling**: Graceful fallback to static data
-
-### **Data Management**
-- **Polling Mechanism**: Automatic data refresh
-- **Error Recovery**: Robust error handling system
-- **Loading States**: User-friendly loading indicators
-- **Cache Strategy**: Optimized data caching
-
-## 🎨 Theme System
-
-### **Dark/Light Mode Toggle**
-- **System-wide theming** across all pages
-- **Persistent preferences** using localStorage
-- **Smooth transitions** between themes
-- **Chart updates** with theme changes
-- **Accessibility compliance** with proper contrast ratios
-
-### **Theme Features**
-- **CSS Custom Properties** for consistent theming
-- **Automatic icon switching** (moon/sun)
-- **Component theme support** for charts and widgets
-- **Responsive theme toggle** button
-- **Cross-page theme persistence**
+---
 
 ## 📱 Responsive Design
 
-### **Breakpoints**
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
-- **Large Desktop**: > 1200px
+### Breakpoints
+- **Mobile**: 320px - 768px (single column, hamburger menu)
+- **Tablet**: 769px - 1023px (2 columns, inline menu)
+- **Desktop**: 1024px+ (3 columns, full navigation)
 
-### **Responsive Features**
-- **Flexible Navigation**: Mobile hamburger menu
-- **Adaptive Grid**: Responsive card layouts
-- **Scalable Typography**: Fluid text sizing
-- **Touch Optimization**: Mobile-friendly interactions
-- **Chart Responsiveness**: Adaptive data visualizations
+### Mobile Features
+- Touch-optimized interface
+- Hamburger navigation menu
+- Swipe-friendly interactions
+- Optimized font sizes
+- No horizontal scrolling
 
-## 🌐 Browser Support
+---
 
-### **Supported Browsers**
-- **Chrome** 90+
-- **Firefox** 88+
-- **Safari** 14+
-- **Edge** 90+
+## 🎯 Key Pages
 
-### **Feature Support**
-- **CSS Grid**: Modern layout support
-- **Flexbox**: Flexible layouts
-- **CSS Custom Properties**: Dynamic theming
-- **Intersection Observer**: Scroll animations
-- **Fetch API**: Modern HTTP requests
-- **Local Storage**: Theme and data persistence
+### 🏠 [Homepage](index.html)
+- Hero section with value proposition
+- AI insights dashboard
+- Feature highlights
+- Call-to-action sections
+
+### 💼 [Portfolio](portfolio.html)
+- **47 enterprise-level projects**
+- Category filters (AI/ML, Blockchain, FinTech, RegTech, Trading, Enterprise)
+- GitHub-style project cards
+- Tech stack badges
+- Star ratings and years
+
+### 🛠️ [Demo Tools](demo.html)
+- **8 interactive financial calculators**
+- Live calculations with range sliders
+- Real-time results
+- Clean, intuitive UI
+
+### 📝 [Blog](blog.html)
+- **10 financial articles**
+- Category filtering (Investing, Budgeting, FinTech, Money Tips)
+- Read time estimates
+- Author information
+
+---
+
+## 🎨 Design System
+
+### Color Palette
+```css
+--color-primary: #FF6D1F;        /* Primary Orange */
+--color-primary-hover: #E65000;  /* Orange Hover */
+--bg-primary: #FAF3E1;           /* Light Beige Background */
+--bg-secondary: #F5E7C6;         /* Secondary Beige */
+--bg-card: #FFFFFF;              /* Card Background */
+--border-color: #E5D5B7;         /* Border Color */
+--text-primary: #222222;         /* Dark Text */
+--text-secondary: #444444;       /* Secondary Text */
+--text-light: #666666;           /* Light Text */
+```
+
+### Typography
+- **Font Family**: Inter (Google Fonts)
+- **Base Size**: 16px
+- **Headings**: 700-800 weight
+- **Body**: 400-500 weight
+
+### Components
+- Cards with subtle shadows
+- Pill-shaped filter buttons
+- Icon-based visual hierarchy
+- Badge system for tags
+- Smooth hover effects
+
+---
+
+## 💡 Enterprise Projects Showcase
+
+### AI/ML Platforms (15)
+- AI-Driven Investment Intelligence
+- AI Credit Scoring Engine
+- AI Robo-Advisor
+- Market Sentiment Analyzer
+- AI Contract Analyzer
+- Financial Forecasting System
+- ESG Scoring Platform
+- And more...
+
+### Blockchain Solutions (8)
+- Blockchain Digital Identity (KYC)
+- Decentralized Insurance Claims
+- Tokenized Asset Investment
+- Digital Escrow Platform
+- Cross-Border Remittance
+- Invoice Financing Platform
+- Smart Subsidy Distribution
+- And more...
+
+### RegTech & Compliance (6)
+- Anti-Money Laundering (AML) System
+- Automated Compliance Platform
+- Real-Time Fraud Detection
+- Revenue Leakage Detection
+- Expense Fraud Detection
+- And more...
+
+### Trading & Analytics (5)
+- AI Stock Trading Automation
+- Market Sentiment Analyzer
+- M&A Due Diligence Platform
+- Startup Valuation Engine
+- And more...
+
+### Enterprise Finance (9)
+- Enterprise Treasury Management
+- AI-Powered CFO Dashboard
+- AI Payroll Engine
+- Business Risk Heatmap
+- Debt Recovery Platform
+- And more...
+
+---
+
+## 🔧 Development
+
+### Local Development
+```bash
+# Install a simple HTTP server
+npm install -g http-server
+
+# Run the server
+http-server -p 8000
+
+# Visit http://localhost:8000
+```
+
+### Code Style
+- Semantic HTML5
+- Mobile-first CSS
+- Vanilla JavaScript (no frameworks)
+- CSS custom properties for theming
+- Consistent indentation (4 spaces)
+
+---
+
+## 📊 Statistics
+
+- ✅ **155+ Total Projects**
+- ✅ **98% Client Satisfaction**
+- ✅ **50+ Enterprise Clients**
+- ✅ **24/7 Support**
+- ✅ **Mobile-First Design**
+- ✅ **100% Responsive**
+
+---
 
 ## 🤝 Contributing
 
-We welcome contributions to improve Nextomic! Here's how you can help:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### **Development Setup**
 1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### **Contribution Guidelines**
-- Follow existing code style and conventions
-- Add comments for complex logic
-- Test changes across different browsers
-- Update documentation for new features
-- Ensure responsive design compatibility
-- Test dark/light theme compatibility
-
-### **Areas for Improvement**
-- **Performance Optimization**: Faster loading times
-- **Accessibility**: Enhanced screen reader support
-- **SEO**: Improved search engine optimization
-- **Testing**: Comprehensive test coverage
-- **Documentation**: More detailed guides
-- **PWA Features**: Service worker implementation
+---
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+---
+
+## 👥 About
+
+**Nextomic** - Enterprise Financial Technology Solutions
+
+Powered by **AtomNext Solutions**
+
+---
+
 ## 📞 Contact
 
-### **Project Information**
-- **Repository**: [https://github.com/shaanlabs/Nextomic.git](https://github.com/shaanlabs/Nextomic.git)
-- **Owner**: AtomNext Solutions
-- **Website**: Nextomic Finance Solutions
-
-### **Support**
-- **Issues**: Report bugs and feature requests via GitHub Issues
-- **Discussions**: Join community discussions
-- **Email**: Contact through the website contact form
+- **Website**: [nextomic.com](https://nextomic.com)
+- **Email**: info@nextomic.com
+- **Portfolio**: [View Projects](https://nextomic.com/portfolio.html)
+- **Demo**: [Try Tools](https://nextomic.com/demo.html)
+- **Blog**: [Read Insights](https://nextomic.com/blog.html)
 
 ---
 
-## 🎯 Roadmap
+## ⭐ Show Your Support
 
-### **Upcoming Features**
-- [ ] **PWA Support** - Progressive Web App capabilities with offline functionality
-- [ ] **Advanced Analytics** - Enhanced data visualization and insights
-- [ ] **Mobile App** - Native mobile application development
-- [ ] **API Backend** - Full-stack implementation with database
-- [ ] **User Authentication** - Account management and user profiles
-- [ ] **Real Trading Integration** - Live trading capabilities and broker APIs
-- [ ] **Multi-language Support** - Internationalization and localization
-- [ ] **Advanced AI Features** - Machine learning model integration
-- [ ] **Social Features** - Community forums and expert advice
-- [ ] **Premium Features** - Subscription-based advanced tools
-
-### **Version History**
-- **v1.0.0** - Initial release with core features
-- **v1.1.0** - Added AI tools and real-time data
-- **v1.2.0** - Enhanced UI/UX and animations
-- **v1.3.0** - Added risk assessment tool
-- **v2.0.0** - **NEW** Portfolio Manager, Expense Tracker, Dark Mode Theme System
+Give a ⭐️ if this project helped you or if you like the design!
 
 ---
 
-## 🚀 Recent Updates (v2.0.0)
-
-### **Major New Features**
-✅ **Portfolio Management System** - Complete investment tracking  
-✅ **Expense Tracker Dashboard** - Smart spending management  
-✅ **Dark/Light Theme Toggle** - System-wide theme switching  
-✅ **Enhanced AI Insights** - Smarter financial recommendations  
-✅ **Improved Responsive Design** - Better mobile experience  
-✅ **Advanced Data Visualization** - Interactive charts and analytics  
-
-### **Technical Improvements**
-✅ **Modular Architecture** - Better code organization  
-✅ **Performance Optimization** - Faster loading and smoother animations  
-✅ **Accessibility Enhancements** - Better screen reader support  
-✅ **Cross-browser Compatibility** - Consistent experience across browsers  
-
----
-
-**Made with ❤️ by AtomNext Solutions**
-
-*Nextomic - Empowering Your Financial Future* 
+<p align="center">Made with ❤️ by AtomNext Solutions</p>
+<p align="center">© 2024 Nextomic. All rights reserved.</p>
