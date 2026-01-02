@@ -17,6 +17,23 @@ Nextomic is a comprehensive financial technology platform featuring cutting-edge
 - 📈 **Trading** - AI-powered trading systems, market sentiment analysis
 - 🏢 **Enterprise** - Treasury management, CFO dashboards, payroll engines
 
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Homepage
+![Homepage](screenshots/homepage.png)
+
+### 💼 Portfolio - 47 Enterprise Projects
+![Portfolio](screenshots/portfolio.png)
+
+### 🛠️ Interactive Demo Tools
+![Demo Tools](screenshots/demo.png)
+
+### 📝 Financial Blog
+![Blog](screenshots/blog.png)
+
 ---
 
 ## ✨ Features
