@@ -1,1 +1,249 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Risk Assessment - Nextomic</title>
+    <meta name="description"
+        content="Assess your financial risk profile with AI-powered analysis and get personalized recommendations">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/ai-tools.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-chart-line"></i> Nextomic</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="ai-tools.html" class="nav-link active">AI Tools</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="expense-tracker.html" class="nav-link">Expenses</a></li>
+                <li class="nav-item"><a href="tools.html" class="nav-link">Tools</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>AI Risk Assessment</h1>
+            <p>Discover your financial risk profile and get personalized investment recommendations</p>
+        </div>
+    </section>
+
+    <!-- Risk Assessment Tool -->
+    <section class="risk-assessment-section">
+        <div class="container">
+            <div class="risk-assessment-container">
+                <div class="assessment-intro">
+                    <h2>Understand Your Risk Tolerance</h2>
+                    <p>Answer 10 simple questions to discover your investment risk profile. Our AI analyzes your
+                        responses to provide personalized recommendations.</p>
+                </div>
+
+                <div class="assessment-questionnaire" id="riskQuestionnaire">
+                    <!-- Questions will be dynamically generated -->
+                </div>
+
+                <div class="assessment-results" id="riskResults" style="display: none;">
+                    <div class="results-header">
+                        <h2>Your Risk Profile</h2>
+                        <p class="results-subtitle">Based on your responses, here's your comprehensive risk assessment
+                        </p>
+                    </div>
+
+                    <div class="risk-score-display">
+                        <div class="score-circle">
+                            <svg viewBox="0 0 200 200" class="score-svg">
+                                <circle cx="100" cy="100" r="90" class="score-track"></circle>
+                                <circle cx="100" cy="100" r="90" class="score-fill" id="scoreFill"></circle>
+                            </svg>
+                            <div class="score-text">
+                                <div class="score-number" id="scoreNumber">0</div>
+                                <div class="score-label" id="scoreLabel">-</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="risk-breakdown">
+                        <h3>Risk Factor Breakdown</h3>
+                        <div class="breakdown-grid">
+                            <div class="breakdown-item">
+                                <div class="breakdown-header">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Time Horizon</span>
+                                </div>
+                                <div class="breakdown-value" id="timeHorizonValue">-</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="breakdown-header">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>Financial Capacity</span>
+                                </div>
+                                <div class="breakdown-value" id="financialCapacityValue">-</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="breakdown-header">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Risk Comfort</span>
+                                </div>
+                                <div class="breakdown-value" id="riskComfortValue">-</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="breakdown-header">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Experience Level</span>
+                                </div>
+                                <div class="breakdown-value" id="experienceValue">-</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommended-allocation">
+                        <h3>Recommended Asset Allocation</h3>
+                        <div class="allocation-chart" id="allocationChart"></div>
+                        <div class="allocation-legend" id="allocationLegend"></div>
+                    </div>
+
+                    <div class="personaliz ed-recommendations">
+                        <h3>Personalized Recommendations</h3>
+                        <div class="recommendations-list" id="recommendationsList"></div>
+                    </div>
+
+                    <div class="assessment-actions">
+                        <button class="btn btn-primary" onclick="window.print()">
+                            <i class="fas fa-download"></i>
+                            Download Report
+                        </button>
+                        <button class="btn btn-secondary" onclick="location.reload()">
+                            <i class="fas fa-redo"></i>
+                            Retake Assessment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Nextomic</span>
+                    </div>
+                    <p>Empowering your financial future with cutting-edge technology and personalized solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Personal Finance</a></li>
+                        <li><a href="services.html">Investment Planning</a></li>
+                        <li><a href="services.html">Loan Advisory</a></li>
+                        <li><a href="services.html">Tax Calculators</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>AI Tools</h3>
+                    <ul>
+                        <li><a href="ai-tools.html">AI Chat Assistant</a></li>
+                        <li><a href="ai-tools.html">Spending Analyzer</a></li>
+                        <li><a href="ai-tools.html">Investment Predictor</a></li>
+                        <li><a href="ai-tools.html">Budget Planner</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nextomic. All rights reserved. | Owned by AtomNext Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-toggle" id="chatToggle">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h4>AI Assistant</h4>
+                <button class="chat-close" id="chatClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Need help with your risk assessment? I'm here to explain any questions or results!
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Ask about risk assessment...">
+                <button id="chatSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Utilities -->
+    <script src="assets/js/core/storage.js"></script>
+    <script src="assets/js/core/event-bus.js"></script>
+    <script src="assets/js/utils/validators.js"></script>
+    <script src="assets/js/utils/formatters.js"></script>
+    <script src="assets/js/utils/calculators.js"></script>
+
+    <!-- Risk Assessment Script -->
+    <script src="assets/js/features/risk-assessment.js"></script>
+
+    <!-- Main Script -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

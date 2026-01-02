@@ -1,58 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Manager - Nextomic</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Portfolio - Nextomic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/portfolio.css">
     <style>
-        :root {
-            --background-color: #ffffff;
-            --text-color: #333333;
-            --card-background: #f8f9fa;
-            --primary-color: #3b82f6;
+        /* Gen Z Minimalist Portfolio Design */
+        .portfolio-hero {
+            background: var(--bg-secondary);
+            padding: 50px 0 30px;
+            text-align: center;
         }
 
-        .dark-mode {
-            --background-color: #1a1a1a;
-            --text-color: #f8f9fa;
-            --card-background: #2d2d2d;
-            --primary-color: #60a5fa;
+        .portfolio-hero h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 8px;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
+        .portfolio-hero p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto;
         }
 
-        .navbar, .footer {
-            background-color: var(--card-background);
+        @media (min-width: 768px) {
+            .portfolio-hero {
+                padding: 70px 0 40px;
+            }
+
+            .portfolio-hero h1 {
+                font-size: 42px;
+            }
+
+            .portfolio-hero p {
+                font-size: 18px;
+            }
         }
 
-        .portfolio-card, .analytics-card {
-            background-color: var(--card-background);
+        /* Stats Section - Compact */
+        .stats-compact {
+            background: white;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-color);
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--color-primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Filters - Minimalist Pills */
+        .filter-section {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 60px;
+            z-index: 100;
+        }
+
+        .filter-pills {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pill {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1.5px solid var(--border-color);
+            background: white;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .pill:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .pill.active {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+        }
+
+        /* Projects Grid - Compact & Clean */
+        .projects-section {
+            background: var(--bg-primary);
+            padding: 32px 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Project Card - GitHub Style */
+        .project-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.2s;
             cursor: pointer;
         }
 
-        .chart-container {
-            position: relative;
-            height: 300px;
-            width: 100%;
+        .project-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 12px rgba(255, 109, 31, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .project-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--color-primary);
+            flex-shrink: 0;
+        }
+
+        .project-title {
+            flex: 1;
+        }
+
+        .project-title h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .project-type {
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .project-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            padding: 4px 10px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .project-footer {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .project-footer i {
+            color: var(--color-primary);
+        }
+
+        .footer-stat {
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -64,12 +249,13 @@
                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="ai-tools.html" class="nav-link">AI Tools</a></li>
                 <li class="nav-item"><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                <li class="nav-item"><a href="expense-tracker.html" class="nav-link">Expenses</a></li>
+                <li class="nav-item"><a href="calculator.html" class="nav-link">Calculator</a></li>
+                <li class="nav-item"><a href="demo.html" class="nav-link">Demo</a></li>
                 <li class="nav-item"><a href="tools.html" class="nav-link">Tools</a></li>
                 <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-item"><button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -79,207 +265,1142 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="page-hero">
+    <!-- Hero -->
+    <section class="portfolio-hero">
         <div class="container">
-            <h1>Portfolio Manager</h1>
-            <p>Track your investments, analyze performance, and optimize your portfolio with AI-powered insights</p>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <span class="stat-value" id="portfolio-value">$245,750</span>
-                    <span class="stat-label">Total Portfolio Value</span>
+            <h1>Our Work</h1>
+            <p>Financial solutions we've built for modern businesses</p>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-compact">
+        <div class="container">
+            <div class="stats-row">
+                <div class="stat-item">
+                    <span class="stat-number">155+</span>
+                    <span class="stat-label">Projects</span>
                 </div>
-                <div class="hero-stat">
-                    <span class="stat-value positive" id="daily-change">+$2,840 (+1.17%)</span>
-                    <span class="stat-label">Today's Change</span>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Satisfaction</span>
                 </div>
-                <div class="hero-stat">
-                    <span class="stat-value positive" id="total-return">+$45,750 (+22.87%)</span>
-                    <span class="stat-label">Total Return</span>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Overview -->
-    <section class="portfolio-overview">
+    <!-- Filters -->
+    <section class="filter-section">
         <div class="container">
-            <div class="portfolio-grid">
-                <!-- Portfolio Chart -->
-                <div class="portfolio-card">
-                    <div class="card-header">
-                        <h3>Portfolio Performance</h3>
-                        <div class="time-range">
-                            <button class="time-btn active" data-range="1D">1D</button>
-                            <button class="time-btn" data-range="1W">1W</button>
-                            <button class="time-btn" data-range="1M">1M</button>
-                            <button class="time-btn" data-range="3M">3M</button>
-                            <button class="time-btn" data-range="1Y">1Y</button>
-                            <button class="time-btn" data-range="ALL">ALL</button>
+            <div class="filter-pills">
+                <button class="pill active" data-filter="all">All</button>
+                <button class="pill" data-filter="ai">AI/ML</button>
+                <button class="pill" data-filter="blockchain">Blockchain</button>
+                <button class="pill" data-filter="fintech">FinTech</button>
+                <button class="pill" data-filter="regtech">RegTech</button>
+                <button class="pill" data-filter="trading">Trading</button>
+                <button class="pill" data-filter="enterprise">Enterprise</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card" data-category="web fintech">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="project-title">
+                            <h3>Investment Dashboard</h3>
+                            <span class="project-type">Web Application</span>
                         </div>
                     </div>
-                    <div class="chart-container">
-                        <canvas id="portfolioChart"></canvas>
+                    <p class="project-description">Real-time portfolio tracking and analytics platform for institutional
+                        investors.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
                     </div>
                 </div>
-                <!-- Asset Allocation -->
-                <div class="portfolio-card">
-                    <div class="card-header">
-                        <h3>Asset Allocation</h3>
-                        <button class="btn-secondary" id="rebalance-btn">Rebalance</button>
-                    </div>
-                    <div class="allocation-container">
-                        <div class="allocation-chart">
-                            <canvas id="allocationChart"></canvas>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="mobile">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <div class="allocation-legend">
-                            <div class="legend-item">
-                                <div class="legend-color" style="background: #3b82f6;"></div>
-                                <span>Stocks (65%)</span>
-                                <span class="legend-value">$159,737</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color" style="background: #10b981;"></div>
-                                <span>Bonds (25%)</span>
-                                <span class="legend-value">$61,437</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color" style="background: #f59e0b;"></div>
-                                <span>Cash (10%)</span>
-                                <span class="legend-value">$24,575</span>
-                            </div>
+                        <div class="project-title">
+                            <h3>Expense Tracker Pro</h3>
+                            <span class="project-type">Mobile App</span>
                         </div>
                     </div>
+                    <p class="project-description">AI-powered expense tracking with smart categorization and insights.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React Native</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">ML Kit</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
                 </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="ai fintech">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="project-title">
+                            <h3>Risk Assessment AI</h3>
+                            <span class="project-type">AI Solution</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Machine learning system for evaluating investment risk and
+                        optimization.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">FastAPI</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 5.0</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="web fintech">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="project-title">
+                            <h3>Loan Calculator Suite</h3>
+                            <span class="project-type">Web Tool</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Comprehensive loan calculation tools for mortgages and EMI planning.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">Chart.js</span>
+                        <span class="tag">Tailwind</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.7</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="project-title">
+                            <h3>Advisory Platform</h3>
+                            <span class="project-type">Web Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Platform connecting financial advisors with clients for planning.</p>
+                    <div class="project-tags">
+                        <span class="tag">Angular</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">AWS</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-category="mobile fintech">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="project-title">
+                            <h3>Digital Wallet</h3>
+                            <span class="project-type">Mobile App</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Secure mobile wallet for digital payments and money management.</p>
+                    <div class="project-tags">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Blockchain</span>
+                        <span class="tag">Security</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card" data-category="web ai">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="project-title">
+                            <h3>Chatbot Assistant</h3>
+                            <span class="project-type">AI Chatbot</span>
+                        </div>
+                    </div>
+                    <p class="project-description">24/7 AI-powered financial advice chatbot with NLP capabilities.</p>
+                    <div class="project-tags">
+                        <span class="tag">OpenAI</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">WebSocket</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.6</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="project-title">
+                            <h3>Budget Planner</h3>
+                            <span class="project-type">Web App</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Smart budgeting tool with automated expense categorization.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">D3.js</span>
+                        <span class="tag">Express</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.7</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="project-card" data-category="mobile ai">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="project-title">
+                            <h3>Receipt Scanner</h3>
+                            <span class="project-type">Mobile App</span>
+                        </div>
+                    </div>
+                    <p class="project-description">OCR-powered receipt scanning and automated expense logging.</p>
+                    <div class="project-tags">
+                        <span class="tag">Swift</span>
+                        <span class="tag">Vision API</span>
+                        <span class="tag">CoreML</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 10 -->
+                <div class="project-card" data-category="web fintech">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="project-title">
+                            <h3>Currency Exchange</h3>
+                            <span class="project-type">Web Service</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Real-time currency exchange with live rates and conversions.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">Redis</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 11 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="project-title">
+                            <h3>Financial Education</h3>
+                            <span class="project-type">Learning Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Interactive courses teaching personal finance basics.</p>
+                    <div class="project-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Prisma</span>
+                        <span class="tag">Stripe</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                </div>
+
+                <!-- Project 12 -->
+                <div class="project-card" data-category="mobile fintech">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="project-title">
+                            <h3>Card Manager</h3>
+                            <span class="project-type">Mobile App</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Manage credit cards, track spending, and optimize rewards.</p>
+                    <div class="project-tags">
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">Room DB</span>
+                        <span class="tag">Material</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.7</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 13: AI-Driven Investment Intelligence -->
+                <div class="project-card" data-category="ai fintech trading">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-brain"></i></div>
+                        <div class="project-title">
+                            <h3>AI Investment Intelligence</h3>
+                            <span class="project-type">AI/ML Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Predicts market trends, portfolio risk, and asset allocation using
+                        real-time data for hedge funds.</p>
+                    <div class="project-tags">
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">LLMs</span>
+                        <span class="tag">FastAPI</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 5.0</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 14: Blockchain KYC System -->
+                <div class="project-card" data-category="blockchain fintech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="project-title">
+                            <h3>Blockchain Digital Identity</h3>
+                            <span class="project-type">Blockchain Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Decentralized identity verification for banks using zero-knowledge
+                        proofs.</p>
+                    <div class="project-tags">
+                        <span class="tag">Ethereum</span>
+                        <span class="tag">Solidity</span>
+                        <span class="tag">IPFS</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 15: AI Credit Scoring -->
+                <div class="project-card" data-category="ai fintech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-user-check"></i></div>
+                        <div class="project-title">
+                            <h3>AI Credit Scoring Engine</h3>
+                            <span class="project-type">AI Solution</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Approves loans in seconds using alternative data and behavior
+                        analysis.</p>
+                    <div class="project-tags">
+                        <span class="tag">XGBoost</span>
+                        <span class="tag">Kafka</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 16: Smart Tax Optimization -->
+                <div class="project-card" data-category="ai fintech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <div class="project-title">
+                            <h3>Tax Optimization Platform</h3>
+                            <span class="project-type">AI Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Automatically tracks expenses and legally minimizes tax using AI and
+                        OCR.</p>
+                    <div class="project-tags">
+                        <span class="tag">ML Models</span>
+                        <span class="tag">OCR</span>
+                        <span class="tag">React</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 17: Real-Time Fraud Detection -->
+                <div class="project-card" data-category="fintech regtech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="project-title">
+                            <h3>Fraud Detection System</h3>
+                            <span class="project-type">Cybersecurity</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Detects suspicious transactions in milliseconds using ML and
+                        real-time processing.</p>
+                    <div class="project-tags">
+                        <span class="tag">Kafka</span>
+                        <span class="tag">Spark</span>
+                        <span class="tag">Graph ML</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 5.0</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 18: AI Financial Advisor -->
+                <div class="project-card" data-category="ai fintech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-robot"></i></div>
+                        <div class="project-title">
+                            <h3>AI Robo-Advisor</h3>
+                            <span class="project-type">AI Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Personalized investment advice using LLMs and vector databases.</p>
+                    <div class="project-tags">
+                        <span class="tag">LLMs</span>
+                        <span class="tag">Vector DB</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 19: Treasury Management -->
+                <div class="project-card" data-category="enterprise fintech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-building"></i></div>
+                        <div class="project-title">
+                            <h3>Enterprise Treasury System</h3>
+                            <span class="project-type">Enterprise Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Manages cash flow, liquidity, and risk for Fortune-500 companies.</p>
+                    <div class="project-tags">
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">Microservices</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                </div>
+
+                <!-- Project 20: Startup Funding Matchmaking -->
+                <div class="project-card" data-category="ai fintech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-handshake"></i></div>
+                        <div class="project-title">
+                            <h3>Funding Matchmaking Platform</h3>
+                            <span class="project-type">AI Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Matches startups with investors based on traction and data using AI.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Graph AI</span>
+                        <span class="tag">React</span>
+                        <span class="tag">FastAPI</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.7</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 21: Compliance Automation -->
+                <div class="project-card" data-category="regtech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-clipboard-check"></i></div>
+                        <div class="project-title">
+                            <h3>Automated Compliance Platform</h3>
+                            <span class="project-type">RegTech</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Ensures compliance with RBI, SEBI, GDPR using AI NLP and document
+                        intelligence.</p>
+                    <div class="project-tags">
+                        <span class="tag">AI NLP</span>
+                        <span class="tag">Rule Engine</span>
+                        <span class="tag">Blockchain</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 22: Global Payment Gateway -->
+                <div class="project-card" data-category="fintech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-globe"></i></div>
+                        <div class="project-title">
+                            <h3>Smart Payment Gateway</h3>
+                            <span class="project-type">FinTech Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Routes payments via cheapest and fastest channel automatically using
+                        AI.</p>
+                    <div class="project-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">AI Routing</span>
+                        <span class="tag">Microservices</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 23: Financial Forecasting -->
+                <div class="project-card" data-category="ai enterprise">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-chart-area"></i></div>
+                        <div class="project-title">
+                            <h3>AI Forecasting System</h3>
+                            <span class="project-type">AI Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Predicts revenue, burn rate, and growth using time-series ML models.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Prophet</span>
+                        <span class="tag">Time-Series ML</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 24: Digital Banking Super-App -->
+                <div class="project-card" data-category="fintech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-university"></i></div>
+                        <div class="project-title">
+                            <h3>Digital Banking Super-App</h3>
+                            <span class="project-type">Mobile Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Banking, investments, insurance, and loans in one comprehensive app.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Blockchain</span>
+                        <span class="tag">AI</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 25: Contract Analyzer -->
+                <div class="project-card" data-category="ai fintech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-file-contract"></i></div>
+                        <div class="project-title">
+                            <h3>AI Contract Analyzer</h3>
+                            <span class="project-type">LegalTech AI</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Reads contracts, flags risks, and extracts financial clauses using
+                        LLMs.</p>
+                    <div class="project-tags">
+                        <span class="tag">LLMs</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">OCR</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 26: Wealth Management -->
+                <div class="project-card" data-category="fintech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-gem"></i></div>
+                        <div class="project-title">
+                            <h3>Smart Wealth Management</h3>
+                            <span class="project-type">Consumer FinTech</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Tracks spending, goals, and investments automatically with AI
+                        insights.</p>
+                    <div class="project-tags">
+                        <span class="tag">Mobile App</span>
+                        <span class="tag">AI Insights</span>
+                        <span class="tag">Secure APIs</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.7</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 27: Market Sentiment Analyzer -->
+                <div class="project-card" data-category="ai trading">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-comments-dollar"></i></div>
+                        <div class="project-title">
+                            <h3>Market Sentiment Analyzer</h3>
+                            <span class="project-type">Trading AI</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Analyzes news and social media for real-time market sentiment.</p>
+                    <div class="project-tags">
+                        <span class="tag">NLP</span>
+                        <span class="tag">LLMs</span>
+                        <span class="tag">Real-Time</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 28: Revenue Leakage Detection -->
+                <div class="project-card" data-category="ai enterprise">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-search-dollar"></i></div>
+                        <div class="project-title">
+                            <h3>Revenue Leakage Detection</h3>
+                            <span class="project-type">Enterprise AI</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Detects hidden revenue losses in billing, taxation, and
+                        subscriptions.</p>
+                    <div class="project-tags">
+                        <span class="tag">AI Anomaly</span>
+                        <span class="tag">Kafka</span>
+                        <span class="tag">ERP</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 29: Invoice Financing -->
+                <div class="project-card" data-category="fintech blockchain">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-receipt"></i></div>
+                        <div class="project-title">
+                            <h3>Invoice Financing Platform</h3>
+                            <span class="project-type">FinTech</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Instant loans on unpaid invoices using blockchain and AI risk engine.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Blockchain</span>
+                        <span class="tag">AI Risk</span>
+                        <span class="tag">Payment APIs</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.7</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 30: M&A Due Diligence -->
+                <div class="project-card" data-category="ai enterprise">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="project-title">
+                            <h3>M&A Due Diligence Platform</h3>
+                            <span class="project-type">Corporate Finance AI</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Analyzes companies before acquisition using LLMs and financial NLP.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">LLMs</span>
+                        <span class="tag">Financial NLP</span>
+                        <span class="tag">Data Rooms</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 5.0</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 31: AML System -->
+                <div class="project-card" data-category="regtech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-ban"></i></div>
+                        <div class="project-title">
+                            <h3>Anti-Money Laundering System</h3>
+                            <span class="project-type">RegTech</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Monitors transactions and flags illegal activities using graph ML.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Graph ML</span>
+                        <span class="tag">Real-Time</span>
+                        <span class="tag">Rule Engine</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 32: ESG Scoring -->
+                <div class="project-card" data-category="ai enterprise">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-leaf"></i></div>
+                        <div class="project-title">
+                            <h3>ESG Scoring Platform</h3>
+                            <span class="project-type">Sustainability AI</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Scores companies on ESG compliance using AI scraping and NLP.</p>
+                    <div class="project-tags">
+                        <span class="tag">AI Scraping</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Scoring</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 33: Decentralized Insurance -->
+                <div class="project-card" data-category="blockchain">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-shield"></i></div>
+                        <div class="project-title">
+                            <h3>Decentralized Insurance Claims</h3>
+                            <span class="project-type">InsurTech</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Auto-processes claims using smart contracts and oracles.</p>
+                    <div class="project-tags">
+                        <span class="tag">Smart Contracts</span>
+                        <span class="tag">Oracles</span>
+                        <span class="tag">AI Verification</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.7</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 34: Payroll Engine -->
+                <div class="project-card" data-category="enterprise">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-money-check-alt"></i></div>
+                        <div class="project-title">
+                            <h3>AI Payroll Engine</h3>
+                            <span class="project-type">Enterprise HR</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Dynamic salary structuring and tax optimization using AI.</p>
+                    <div class="project-tags">
+                        <span class="tag">AI Optimization</span>
+                        <span class="tag">Payroll APIs</span>
+                        <span class="tag">Tax</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                </div>
+
+                <!-- Project 35: Government Subsidy System -->
+                <div class="project-card" data-category="blockchain regtech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-landmark"></i></div>
+                        <div class="project-title">
+                            <h3>Smart Subsidy Distribution</h3>
+                            <span class="project-type">GovTech</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Prevents fraud in subsidy payments using blockchain and AI.</p>
+                    <div class="project-tags">
+                        <span class="tag">Blockchain</span>
+                        <span class="tag">Identity</span>
+                        <span class="tag">AI</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                </div>
+
+                <!-- Project 36: Subscription Pricing -->
+                <div class="project-card" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-tag"></i></div>
+                        <div class="project-title">
+                            <h3>Subscription Pricing Optimizer</h3>
+                            <span class="project-type">SaaS AI</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Finds optimal pricing for SaaS products using ML models.</p>
+                    <div class="project-tags">
+                        <span class="tag">ML Pricing</span>
+                        <span class="tag">Analytics</span>
+                        <span class="tag">A/B Testing</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.7</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 37: Financial Health Score -->
+                <div class="project-card" data-category="fintech ai">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
+                        <div class="project-title">
+                            <h3>Financial Health Score</h3>
+                            <span class="project-type">Consumer FinTech</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Combined credit, savings, and behavior score for individuals.</p>
+                    <div class="project-tags">
+                        <span class="tag">Behavioral ML</span>
+                        <span class="tag">Banking APIs</span>
+                        <span class="tag">Scoring</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 38: Cross-Border Remittance -->
+                <div class="project-card" data-category="fintech blockchain">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-paper-plane"></i></div>
+                        <div class="project-title">
+                            <h3>Cross-Border Remittance</h3>
+                            <span class="project-type">FinTech Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Fast and cheap international money transfer using blockchain.</p>
+                    <div class="project-tags">
+                        <span class="tag">Blockchain</span>
+                        <span class="tag">FX AI</span>
+                        <span class="tag">Compliance</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 39: Expense Fraud Detection -->
+                <div class="project-card" data-category="enterprise ai">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-user-secret"></i></div>
+                        <div class="project-title">
+                            <h3>Expense Fraud Detection</h3>
+                            <span class="project-type">Enterprise Finance</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Detects fake bills and employee fraud using OCR and anomaly
+                        detection.</p>
+                    <div class="project-tags">
+                        <span class="tag">OCR</span>
+                        <span class="tag">Anomaly AI</span>
+                        <span class="tag">ERP</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 40: Startup Valuation Engine -->
+                <div class="project-card" data-category="ai fintech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="project-title">
+                            <h3>Startup Valuation Engine</h3>
+                            <span class="project-type">Startup Finance</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Instant valuation based on comparable analysis and AI scoring.</p>
+                    <div class="project-tags">
+                        <span class="tag">ML Models</span>
+                        <span class="tag">Comparables</span>
+                        <span class="tag">AI Scoring</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.7</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 41: Debt Recovery Platform -->
+                <div class="project-card" data-category="fintech ai">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <div class="project-title">
+                            <h3>Intelligent Debt Recovery</h3>
+                            <span class="project-type">FinTech Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Optimizes recovery strategy using behavior prediction and automation.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Behavior AI</span>
+                        <span class="tag">Automation</span>
+                        <span class="tag">NLP</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.6</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                </div>
+
+                <!-- Project 42: CFO Dashboard -->
+                <div class="project-card" data-category="enterprise ai">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="project-title">
+                            <h3>AI-Powered CFO Dashboard</h3>
+                            <span class="project-type">Enterprise Finance</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Single dashboard for financial decision-making with AI forecasting.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Data Lakes</span>
+                        <span class="tag">AI Forecasting</span>
+                        <span class="tag">BI</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 43: Tokenized Assets -->
+                <div class="project-card" data-category="blockchain">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-coins"></i></div>
+                        <div class="project-title">
+                            <h3>Tokenized Asset Investment</h3>
+                            <span class="project-type">Web3 Finance</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Fractional ownership of assets using blockchain and smart contracts.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Blockchain</span>
+                        <span class="tag">Smart Contracts</span>
+                        <span class="tag">Compliance</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 44: Stock Trading Automation -->
+                <div class="project-card" data-category="trading ai">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-chart-candlestick"></i></div>
+                        <div class="project-title">
+                            <h3>AI Stock Trading System</h3>
+                            <span class="project-type">Trading AI</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Automated trading strategies with risk control using reinforcement
+                        learning.</p>
+                    <div class="project-tags">
+                        <span class="tag">RL</span>
+                        <span class="tag">Real-Time</span>
+                        <span class="tag">Risk Control</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.9</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 45: Banking Chatbot -->
+                <div class="project-card" data-category="ai fintech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-comments"></i></div>
+                        <div class="project-title">
+                            <h3>AI Financial Chatbot</h3>
+                            <span class="project-type">Banking AI</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Handles queries, advice, and onboarding using LLMs and banking APIs.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">LLMs</span>
+                        <span class="tag">Banking APIs</span>
+                        <span class="tag">NLP</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 46: Digital Escrow -->
+                <div class="project-card" data-category="blockchain fintech">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-lock"></i></div>
+                        <div class="project-title">
+                            <h3>Digital Escrow Platform</h3>
+                            <span class="project-type">Blockchain Platform</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Secure transactions between parties using smart contracts.</p>
+                    <div class="project-tags">
+                        <span class="tag">Smart Contracts</span>
+                        <span class="tag">Legal Tech</span>
+                        <span class="tag">Compliance</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.7</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                </div>
+
+                <!-- Project 47: Business Risk Heatmap -->
+                <div class="project-card" data-category="enterprise ai">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-fire"></i></div>
+                        <div class="project-title">
+                            <h3>Business Risk Heatmap</h3>
+                            <span class="project-type">Enterprise Risk</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Visual risk mapping for companies using AI risk modeling.</p>
+                    <div class="project-tags">
+                        <span class="tag">AI Risk</span>
+                        <span class="tag">Visualization</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="footer-stat"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="footer-stat"><i class="fas fa-calendar"></i> 2024</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-
-    <!-- Holdings -->
-    <section class="holdings-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Your Holdings</h2>
-                <div class="section-actions">
-                    <button class="btn-primary" id="add-holding-btn">
-                        <i class="fas fa-plus"></i> Add Investment
-                    </button>
-                    <button class="btn-secondary" id="export-btn">
-                        <i class="fas fa-download"></i> Export
-                    </button>
-                </div>
-            </div>
-            <div class="holdings-table">
-                <div class="table-header">
-                    <div class="table-cell">Asset</div>
-                    <div class="table-cell">Shares</div>
-                    <div class="table-cell">Price</div>
-                    <div class="table-cell">Value</div>
-                    <div class="table-cell">Day Change</div>
-                    <div class="table-cell">Total Return</div>
-                    <div class="table-cell">Actions</div>
-                </div>
-                <div class="holdings-list" id="holdings-list">
-                    <!-- Holdings will be populated by JavaScript -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Performance Analytics -->
-    <section class="analytics-section">
-        <div class="container">
-            <h2>Performance Analytics</h2>
-            <div class="analytics-grid">
-                <div class="analytics-card">
-                    <div class="analytics-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Sharpe Ratio</h3>
-                    <div class="analytics-value">1.45</div>
-                    <p>Risk-adjusted return measure</p>
-                </div>
-                <div class="analytics-card">
-                    <div class="analytics-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Beta</h3>
-                    <div class="analytics-value">0.87</div>
-                    <p>Portfolio volatility vs market</p>
-                </div>
-                <div class="analytics-card">
-                    <div class="analytics-icon">
-                        <i class="fas fa-percentage"></i>
-                    </div>
-                    <h3>Alpha</h3>
-                    <div class="analytics-value positive">+2.3%</div>
-                    <p>Excess return over benchmark</p>
-                </div>
-                <div class="analytics-card">
-                    <div class="analytics-icon">
-                        <i class="fas fa-wave-square"></i>
-                    </div>
-                    <h3>Volatility</h3>
-                    <div class="analytics-value">12.4%</div>
-                    <p>Standard deviation of returns</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Add Investment Modal -->
-    <div id="add-investment-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Add New Investment</h3>
-                <span class="close">&times;</span>
-            </div>
-            <form id="add-investment-form">
-                <div class="form-group">
-                    <label for="symbol">Symbol</label>
-                    <input type="text" id="symbol" name="symbol" placeholder="e.g., AAPL" required>
-                </div>
-                <div class="form-group">
-                    <label for="shares">Shares</label>
-                    <input type="number" id="shares" name="shares" placeholder="Number of shares" required>
-                </div>
-                <div class="form-group">
-                    <label for="purchase-price">Purchase Price</label>
-                    <input type="number" id="purchase-price" name="purchase-price" step="0.01" placeholder="Price per share" required>
-                </div>
-                <div class="form-group">
-                    <label for="purchase-date">Purchase Date</label>
-                    <input type="date" id="purchase-date" name="purchase-date" required>
-                </div>
-                <div class="form-actions">
-                    <button type="button" class="btn-secondary" id="cancel-btn">Cancel</button>
-                    <button type="submit" class="btn-primary">Add Investment</button>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-chart-line"></i> Nextomic</h3>
-                    <p>Empowering your financial future with AI-driven insights and comprehensive financial solutions.</p>
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Nextomic</span>
+                    </div>
+                    <p>Professional financial solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h3>Services</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="ai-tools.html">AI Tools</a></li>
+                        <li><a href="services.html">Personal Finance</a></li>
+                        <li><a href="services.html">Investment Planning</a></li>
+                        <li><a href="services.html">Loan Advisory</a></li>
+                        <li><a href="calculator.html">Calculators</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p><i class="fas fa-envelope"></i> info@nextomic.com</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="calculator.html">All Calculators</a></li>
+                        <li><a href="expense-tracker.html">Expense Tracker</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="demo.html">Try Demo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -288,66 +1409,30 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anime.js/3.2.1/anime.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/portfolio.js"></script>
     <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const icon = themeToggle.querySelector('i');
-            if (document.body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        });
+        // Filter functionality
+        const pills = document.querySelectorAll('.pill');
+        const cards = document.querySelectorAll('.project-card');
 
-        // Portfolio Performance Chart
-        const portfolioCtx = document.getElementById('portfolioChart').getContext('2d');
-        const portfolioChart = new Chart(portfolioCtx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Portfolio Value',
-                    data: [200000, 210000, 220000, 215000, 230000, 245000],
-                    borderColor: 'var(--primary-color)',
-                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                    tension: 0.1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false
-            }
-        });
+        pills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                pills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
 
-        // Asset Allocation Chart
-        const allocationCtx = document.getElementById('allocationChart').getContext('2d');
-        const allocationChart = new Chart(allocationCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Stocks', 'Bonds', 'Cash'],
-                datasets: [{
-                    data: [65, 25, 10],
-                    backgroundColor: [
-                        '#3b82f6',
-                        '#10b981',
-                        '#f59e0b'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false
-            }
+                const filter = pill.getAttribute('data-filter');
+
+                cards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category.includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
         });
     </script>
 </body>
+
 </html>

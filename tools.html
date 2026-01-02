@@ -1,53 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance Tools - Nextomic Complete Finance Solutions</title>
-    <meta name="description" content="Interactive finance tools: Loan/EMI Calculator and Savings Goal Tracker by Nextomic">
-    
+    <title>Tools - Nextomic Complete Finance Solutions</title>
+    <meta name="description"
+        content="Professional financial tools including calculators, trackers, and AI-powered analytics">
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Anime.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    
+
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/tools.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="index.html">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Nextomic</span>
-                </a>
+                <h2><i class="fas fa-chart-line"></i> Nextomic</h2>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="services.html" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="ai-tools.html" class="nav-link">AI Tools</a>
-                </li>
-                <li class="nav-item">
-                    <a href="blog.html" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="expense-tracker.html" class="nav-link">Expenses</a></li>
+                <li class="nav-item"><a href="calculator.html" class="nav-link">Calculator</a></li>
+                <li class="nav-item"><a href="demo.html" class="nav-link">Demo</a></li>
+                <li class="nav-item"><a href="tools.html" class="nav-link active">Tools</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -60,196 +55,171 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
-            <h1>Interactive Finance Tools</h1>
-            <p>Powerful calculators and trackers to help you make informed financial decisions</p>
+            <h1>Financial Tools</h1>
+            <p>Powerful calculators, trackers, and intelligent tools to help you make informed financial decisions</p>
         </div>
     </section>
 
     <!-- Tools Section -->
     <section class="tools-section">
         <div class="container">
-            <div class="emi-calculator-card">
-                <div class="tool-header">
+            <!-- Section: Intelligent Tools -->
+            <div class="section-header">
+                <h2><i class="fas fa-brain"></i> Intelligent Tools</h2>
+                <p>AI-powered tools for smarter financial management</p>
+            </div>
+
+            <div class="tools-grid">
+                <!-- Chat Assistant -->
+                <div class="tool-card">
                     <div class="tool-icon">
-                        <i class="fas fa-calculator"></i>
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Chat Assistant</h3>
+                    <p>Get instant answers to your financial questions with our AI-powered chatbot</p>
+                    <div class="tool-features">
+                        <span class="feature-tag">24/7 Available</span>
+                        <span class="feature-tag">Instant Responses</span>
+                        <span class="feature-tag">Expert Advice</span>
+                    </div>
+                    <a href="demo.html#chat" class="btn btn-secondary">Try Now</a>
+                </div>
+
+                <!-- Spending Analyzer -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Spending Analyzer</h3>
+                    <p>Track and analyze your spending patterns with smart categorization</p>
+                    <div class="tool-features">
+                        <span class="feature-tag">Auto Categories</span>
+                        <span class="feature-tag">Visual Reports</span>
+                        <span class="feature-tag">Smart Alerts</span>
+                    </div>
+                    <a href="demo.html#analyzer" class="btn btn-secondary">Try Now</a>
+                </div>
+
+                <!-- Investment Predictor -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-crystal-ball"></i>
+                    </div>
+                    <h3>Investment Predictor</h3>
+                    <p>AI-driven predictions and insights for smarter investment decisions</p>
+                    <div class="tool-features">
+                        <span class="feature-tag">Market Trends</span>
+                        <span class="feature-tag">Risk Analysis</span>
+                        <span class="feature-tag">Predictions</span>
+                    </div>
+                    <a href="demo.html#predictor" class="btn btn-secondary">Try Now</a>
+                </div>
+            </div>
+
+            <!-- Section: Financial Calculators -->
+            <div class="section-header" style="margin-top: 4rem;">
+                <h2><i class="fas fa-calculator"></i> Financial Calculators</h2>
+                <p>Quick and accurate calculations for your financial planning</p>
+            </div>
+
+            <div class="tools-grid">
+                <!-- EMI Calculator -->
+                <div class="tool-card featured">
+                    <div class="tool-badge">Most Popular</div>
+                    <div class="tool-icon">
+                        <i class="fas fa-home"></i>
                     </div>
                     <h3>Loan/EMI Calculator</h3>
-                    <p>Calculate your monthly EMI, total interest, and total payment for any loan amount</p>
+                    <p>Calculate your monthly EMI, total interest, and loan amortization instantly</p>
+                    <div class="tool-features">
+                        <span class="feature-tag">Home Loans</span>
+                        <span class="feature-tag">Car Loans</span>
+                        <span class="feature-tag">Personal Loans</span>
+                    </div>
+                    <a href="demo.html#emi" class="btn btn-primary">Calculate Now</a>
                 </div>
-                
-                <form id="emiForm" class="calculator-form">
-                    <div class="form-group">
-                        <label for="loanAmount">Loan Amount</label>
-                        <input type="range" id="loanAmount" min="1000" max="1000000" value="100000" step="1000">
-                        <span class="slider-value" id="loanAmountValue">$100,000</span>
+
+                <!-- Retirement Calculator -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-umbrella-beach"></i>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="interestRate">Interest Rate (% per year)</label>
-                        <input type="range" id="interestRate" min="1" max="20" value="8" step="0.1">
-                        <span class="slider-value" id="interestRateValue">8%</span>
+                    <h3>Retirement Planner</h3>
+                    <p>Plan yourretirement with accurate projections and savings goals</p>
+                    <div class="tool-features">
+                        <span class="feature-tag">Goal Setting</span>
+                        <span class="feature-tag">Projections</span>
+                        <span class="feature-tag">Inflation Adjusted</span>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="loanTenure">Loan Tenure (years)</label>
-                        <input type="range" id="loanTenure" min="1" max="30" value="20" step="1">
-                        <span class="slider-value" id="loanTenureValue">20 years</span>
+                    <a href="demo.html#retirement" class="btn btn-secondary">Plan Now</a>
+                </div>
+
+                <!-- Investment Calculator -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-coins"></i>
                     </div>
-                </form>
-                
-                <div class="emi-results">
-                    <div class="result-item">
-                        <div class="result-label">Monthly EMI</div>
-                        <div class="result-value" id="emiResult">$836.44</div>
+                    <h3>Investment Returns</h3>
+                    <p>Calculate potential returns on your investments with compound interest</p>
+                    <div class="tool-features">
+                        <span class="feature-tag">SIP Calculator</span>
+                        <span class="feature-tag">Lump Sum</span>
+                        <span class="feature-tag">Returns Analysis</span>
                     </div>
-                    <div class="result-item">
-                        <div class="result-label">Total Interest</div>
-                        <div class="result-value" id="interestResult">$100,746.40</div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-label">Total Payment</div>
-                        <div class="result-value" id="totalResult">$200,746.40</div>
-                    </div>
+                    <a href="demo.html#investment" class="btn btn-secondary">Calculate</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Savings Goals Section -->
-    <section class="savings-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Savings Goal Tracker</h2>
-                <p>Track your progress towards multiple financial goals with visual progress bars</p>
+            <!-- Section: Tracking Tools -->
+            <div class="section-header" style="margin-top: 4rem;">
+                <h2><i class="fas fa-tasks"></i> Tracking & Management</h2>
+                <p>Monitor your financial goals and progress</p>
             </div>
-            
-            <div class="savings-goals-grid">
-                <div class="savings-goal-card">
-                    <div class="goal-header">
-                        <h3>Emergency Fund</h3>
-                        <span class="goal-target">$10,000</span>
+
+            <div class="tools-grid">
+                <!-- Savings Goals -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-piggy-bank"></i>
                     </div>
-                    <div class="goal-progress-bar">
-                        <div class="goal-progress-fill" style="width: 75%;"></div>
+                    <h3>Savings Goals Tracker</h3>
+                    <p>Set and track multiple savings goals with visual progress indicators</p>
+                    <div class="tool-features">
+                        <span class="feature-tag">Multiple Goals</span>
+                        <span class="feature-tag">Progress Tracking</span>
+                        <span class="feature-tag">Milestones</span>
                     </div>
-                    <div class="goal-stats">
-                        <span class="current-amount">$7,500</span>
-                        <span class="remaining">$2,500 remaining</span>
-                    </div>
-                    <div class="goal-milestones">
-                        <div class="milestone reached">
-                            <i class="fas fa-check-circle"></i>
-                            <span>$2,500</span>
-                        </div>
-                        <div class="milestone reached">
-                            <i class="fas fa-check-circle"></i>
-                            <span>$5,000</span>
-                        </div>
-                        <div class="milestone reached">
-                            <i class="fas fa-check-circle"></i>
-                            <span>$7,500</span>
-                        </div>
-                        <div class="milestone">
-                            <i class="fas fa-circle"></i>
-                            <span>$10,000</span>
-                        </div>
-                    </div>
+                    <a href="demo.html#savings" class="btn btn-secondary">Track Goals</a>
                 </div>
 
-                <div class="savings-goal-card">
-                    <div class="goal-header">
-                        <h3>Vacation Fund</h3>
-                        <span class="goal-target">$5,000</span>
+                <!-- Budget Planner -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-clipboard-list"></i>
                     </div>
-                    <div class="goal-progress-bar">
-                        <div class="goal-progress-fill" style="width: 45%;"></div>
+                    <h3>Budget Planner</h3>
+                    <p>Create and manage your monthly budget with smart recommendations</p>
+                    <div class="tool-features">
+                        <span class="feature-tag">50/30/20 Rule</span>
+                        <span class="feature-tag">Custom Budgets</span>
+                        <span class="feature-tag">Alerts</span>
                     </div>
-                    <div class="goal-stats">
-                        <span class="current-amount">$2,250</span>
-                        <span class="remaining">$2,750 remaining</span>
-                    </div>
-                    <div class="goal-milestones">
-                        <div class="milestone reached">
-                            <i class="fas fa-check-circle"></i>
-                            <span>$1,000</span>
-                        </div>
-                        <div class="milestone reached">
-                            <i class="fas fa-check-circle"></i>
-                            <span>$2,000</span>
-                        </div>
-                        <div class="milestone">
-                            <i class="fas fa-circle"></i>
-                            <span>$3,500</span>
-                        </div>
-                        <div class="milestone">
-                            <i class="fas fa-circle"></i>
-                            <span>$5,000</span>
-                        </div>
-                    </div>
+                    <a href="demo.html#budget" class="btn btn-secondary">Plan Budget</a>
                 </div>
 
-                <div class="savings-goal-card">
-                    <div class="goal-header">
-                        <h3>Home Down Payment</h3>
-                        <span class="goal-target">$50,000</span>
+                <!-- Portfolio Tracker -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-area"></i>
                     </div>
-                    <div class="goal-progress-bar">
-                        <div class="goal-progress-fill" style="width: 30%;"></div>
+                    <h3>Portfolio Tracker</h3>
+                    <p>Monitor your investment portfolio with real-time insights and analytics</p>
+                    <div class="tool-features">
+                        <span class="feature-tag">Asset Allocation</span>
+                        <span class="feature-tag">Performance</span>
+                        <span class="feature-tag">Rebalancing</span>
                     </div>
-                    <div class="goal-stats">
-                        <span class="current-amount">$15,000</span>
-                        <span class="remaining">$35,000 remaining</span>
-                    </div>
-                    <div class="goal-milestones">
-                        <div class="milestone reached">
-                            <i class="fas fa-check-circle"></i>
-                            <span>$10,000</span>
-                        </div>
-                        <div class="milestone">
-                            <i class="fas fa-circle"></i>
-                            <span>$25,000</span>
-                        </div>
-                        <div class="milestone">
-                            <i class="fas fa-circle"></i>
-                            <span>$37,500</span>
-                        </div>
-                        <div class="milestone">
-                            <i class="fas fa-circle"></i>
-                            <span>$50,000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="savings-goal-card">
-                    <div class="goal-header">
-                        <h3>Investment Portfolio</h3>
-                        <span class="goal-target">$100,000</span>
-                    </div>
-                    <div class="goal-progress-bar">
-                        <div class="goal-progress-fill" style="width: 60%;"></div>
-                    </div>
-                    <div class="goal-stats">
-                        <span class="current-amount">$60,000</span>
-                        <span class="remaining">$40,000 remaining</span>
-                    </div>
-                    <div class="goal-milestones">
-                        <div class="milestone reached">
-                            <i class="fas fa-check-circle"></i>
-                            <span>$25,000</span>
-                        </div>
-                        <div class="milestone reached">
-                            <i class="fas fa-check-circle"></i>
-                            <span>$50,000</span>
-                        </div>
-                        <div class="milestone reached">
-                            <i class="fas fa-check-circle"></i>
-                            <span>$75,000</span>
-                        </div>
-                        <div class="milestone">
-                            <i class="fas fa-circle"></i>
-                            <span>$100,000</span>
-                        </div>
-                    </div>
+                    <a href="portfolio.html" class="btn btn-secondary">View Portfolio</a>
                 </div>
             </div>
         </div>
@@ -260,10 +230,10 @@
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Take Control of Your Finances?</h2>
-                <p>Join thousands of users who trust Nextomic for their financial success</p>
-                <a href="contact.html" class="btn btn-primary btn-large">
-                    <i class="fas fa-arrow-right"></i>
-                    Start Your Journey
+                <p>Try all our tools for free and make smarter financial decisions</p>
+                <a href="demo.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-play-circle"></i>
+                    Explore All Tools
                 </a>
             </div>
         </div>
@@ -296,12 +266,12 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>AI Tools</h3>
+                    <h3>Tools</h3>
                     <ul>
-                        <li><a href="ai-tools.html">AI Chat Assistant</a></li>
-                        <li><a href="ai-tools.html">Spending Analyzer</a></li>
-                        <li><a href="ai-tools.html">Investment Predictor</a></li>
-                        <li><a href="ai-tools.html">Budget Planner</a></li>
+                        <li><a href="tools.html">Chat Assistant</a></li>
+                        <li><a href="tools.html">Spending Analyzer</a></li>
+                        <li><a href="tools.html">Investment Predictor</a></li>
+                        <li><a href="tools.html">EMI Calculator</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -322,6 +292,6 @@
 
     <!-- Custom JavaScript -->
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/tools.js"></script>
 </body>
-</html> 
+
+</html>

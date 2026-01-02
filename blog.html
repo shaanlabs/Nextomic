@@ -1,53 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Nextomic Complete Finance Solutions</title>
-    <meta name="description" content="Latest financial insights, tips, and expert advice from Nextomic">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+    <title>Blog - Nextomic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Anime.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/blog.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <style>
+        /* Clean Blog Page - Orange & Beige Only */
+        .blog-hero {
+            background: var(--bg-secondary);
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .blog-hero p {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        @media (min-width: 768px) {
+            .blog-hero {
+                padding: 70px 0 40px;
+            }
+
+            .blog-hero h1 {
+                font-size: 42px;
+            }
+        }
+
+        /* Filter Pills */
+        .filter-section {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 60px;
+            z-index: 100;
+        }
+
+        .filter-pills {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pill {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1.5px solid var(--border-color);
+            background: white;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .pill:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .pill.active {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+        }
+
+        /* Articles Grid */
+        .articles-section {
+            background: var(--bg-primary);
+            padding: 32px 0;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .articles-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Article Card */
+        .article-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 12px rgba(255, 109, 31, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .article-image {
+            height: 160px;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--color-primary);
+            position: relative;
+        }
+
+        .article-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--color-primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .article-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .article-excerpt {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .article-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            font-size: 10px;
+        }
+
+        .read-more {
+            color: var(--color-primary);
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+    </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="index.html">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Nextomic</span>
-                </a>
+                <h2><i class="fas fa-chart-line"></i> Nextomic</h2>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="services.html" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="ai-tools.html" class="nav-link">AI Tools</a>
-                </li>
-                <li class="nav-item">
-                    <a href="blog.html" class="nav-link active">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="expense-tracker.html" class="nav-link">Expenses</a></li>
+                <li class="nav-item"><a href="calculator.html" class="nav-link">Calculator</a></li>
+                <li class="nav-item"><a href="demo.html" class="nav-link">Demo</a></li>
+                <li class="nav-item"><a href="tools.html" class="nav-link">Tools</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -57,219 +240,271 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="page-hero">
+    <!-- Hero -->
+    <section class="blog-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Financial Insights & Tips</h1>
-                <p>Stay informed with the latest financial trends, expert advice, and actionable insights to help you achieve your financial goals.</p>
-            </div>
+            <h1>Financial Insights</h1>
+            <p>Tips, guides, and news for smarter money management</p>
         </div>
-        <div class="hero-bg-animation"></div>
     </section>
 
-    <!-- Featured Article -->
-    <section class="featured-section">
+    <!-- Filters -->
+    <section class="filter-section">
         <div class="container">
-            <div class="featured-article">
-                <div class="article-image">
-                    <div class="image-placeholder">
+            <div class="filter-pills">
+                <button class="pill active" data-filter="all">All Posts</button>
+                <button class="pill" data-filter="investing">Investing</button>
+                <button class="pill" data-filter="budgeting">Budgeting</button>
+                <button class="pill" data-filter="fintech">Fintech</button>
+                <button class="pill" data-filter="tips">Money Tips</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles -->
+    <section class="articles-section">
+        <div class="container">
+            <div class="articles-grid">
+
+                <!-- Article 1 -->
+                <div class="article-card" data-category="investing">
+                    <div class="article-image">
                         <i class="fas fa-chart-line"></i>
+                        <span class="article-badge">Investing</span>
                     </div>
-                    <div class="article-badge">Featured</div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="meta-item"><i class="fas fa-calendar"></i> Jan 2, 2024</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> 5 min</span>
+                        </div>
+                        <h3 class="article-title">Top 10 Investment Strategies for 2024</h3>
+                        <p class="article-excerpt">Learn the most effective investment strategies to maximize your
+                            returns in the current market.</p>
+                        <div class="article-footer">
+                            <div class="author-info">
+                                <div class="author-avatar"><i class="fas fa-user"></i></div>
+                                <span>Sarah Chen</span>
+                            </div>
+                            <a href="#" class="read-more">Read →</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="category">Investment</span>
-                        <span class="date">March 15, 2024</span>
-                        <span class="read-time">8 min read</span>
+
+                <!-- Article 2 -->
+                <div class="article-card" data-category="budgeting">
+                    <div class="article-image">
+                        <i class="fas fa-piggy-bank"></i>
+                        <span class="article-badge">Budgeting</span>
                     </div>
-                    <h2>The Future of AI in Personal Finance: What You Need to Know</h2>
-                    <p>Discover how artificial intelligence is revolutionizing personal finance management and what it means for your financial future. From automated budgeting to intelligent investment recommendations, AI is transforming how we approach money management.</p>
-                    <div class="article-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="meta-item"><i class="fas fa-calendar"></i> Dec 28, 2023</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> 4 min</span>
                         </div>
-                        <div class="author-info">
-                            <span class="author-name">Sarah Johnson</span>
-                            <span class="author-title">CEO & Co-Founder</span>
+                        <h3 class="article-title">The 50/30/20 Rule: Budget Like a Pro</h3>
+                        <p class="article-excerpt">Master the simple yet powerful budgeting rule that actually works for
+                            most people.</p>
+                        <div class="article-footer">
+                            <div class="author-info">
+                                <div class="author-avatar"><i class="fas fa-user"></i></div>
+                                <span>Mike Johnson</span>
+                            </div>
+                            <a href="#" class="read-more">Read →</a>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-primary">Read Full Article</a>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Blog Grid -->
-    <section class="blog-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Latest Articles</h2>
-                <p>Expert insights and practical advice for your financial journey</p>
-            </div>
-            
-            <div class="blog-filters">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="investment">Investment</button>
-                <button class="filter-btn" data-category="budgeting">Budgeting</button>
-                <button class="filter-btn" data-category="ai">AI & Technology</button>
-                <button class="filter-btn" data-category="tips">Financial Tips</button>
-            </div>
-            
-            <div class="blog-grid">
-                <article class="blog-card" data-category="investment">
-                    <div class="card-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-pie"></i>
-                        </div>
-                        <div class="card-badge">Investment</div>
+                <!-- Article 3 -->
+                <div class="article-card" data-category="fintech">
+                    <div class="article-image">
+                        <i class="fas fa-robot"></i>
+                        <span class="article-badge">Fintech</span>
                     </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="date">March 12, 2024</span>
-                            <span class="read-time">5 min read</span>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="meta-item"><i class="fas fa-calendar"></i> Dec 25, 2023</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> 6 min</span>
                         </div>
-                        <h3>5 Investment Strategies for Beginners in 2024</h3>
-                        <p>Learn the fundamentals of investing and discover five proven strategies that can help beginners build wealth in today's market.</p>
-                        <div class="card-author">
-                            <span class="author-name">Michael Chen</span>
+                        <h3 class="article-title">AI in Personal Finance: A Game Changer</h3>
+                        <p class="article-excerpt">Discover how artificial intelligence is revolutionizing the way we
+                            manage money.</p>
+                        <div class="article-footer">
+                            <div class="author-info">
+                                <div class="author-avatar"><i class="fas fa-user"></i></div>
+                                <span>Alex Kumar</span>
+                            </div>
+                            <a href="#" class="read-more">Read →</a>
                         </div>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </article>
+                </div>
 
-                <article class="blog-card" data-category="budgeting">
-                    <div class="card-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-piggy-bank"></i>
-                        </div>
-                        <div class="card-badge">Budgeting</div>
+                <!-- Article 4 -->
+                <div class="article-card" data-category="tips">
+                    <div class="article-image">
+                        <i class="fas fa-lightbulb"></i>
+                        <span class="article-badge">Money Tips</span>
                     </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="date">March 10, 2024</span>
-                            <span class="read-time">6 min read</span>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="meta-item"><i class="fas fa-calendar"></i> Dec 20, 2023</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> 3 min</span>
                         </div>
-                        <h3>How to Create a Budget That Actually Works</h3>
-                        <p>Master the art of budgeting with our comprehensive guide. Learn practical techniques to track expenses and achieve your financial goals.</p>
-                        <div class="card-author">
-                            <span class="author-name">Emily Rodriguez</span>
+                        <h3 class="article-title">5 Ways to Save $500 This Month</h3>
+                        <p class="article-excerpt">Simple, actionable tips to cut expenses and boost your savings
+                            immediately.</p>
+                        <div class="article-footer">
+                            <div class="author-info">
+                                <div class="author-avatar"><i class="fas fa-user"></i></div>
+                                <span>Lisa Wang</span>
+                            </div>
+                            <a href="#" class="read-more">Read →</a>
                         </div>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </article>
+                </div>
 
-                <article class="blog-card" data-category="ai">
-                    <div class="card-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="card-badge">AI & Technology</div>
+                <!-- Article 5 -->
+                <div class="article-card" data-category="investing">
+                    <div class="article-image">
+                        <i class="fas fa-coins"></i>
+                        <span class="article-badge">Investing</span>
                     </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="date">March 8, 2024</span>
-                            <span class="read-time">7 min read</span>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="meta-item"><i class="fas fa-calendar"></i> Dec 15, 2023</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> 7 min</span>
                         </div>
-                        <h3>AI-Powered Financial Planning: The Complete Guide</h3>
-                        <p>Explore how artificial intelligence is transforming financial planning and how you can leverage these tools for better financial decisions.</p>
-                        <div class="card-author">
-                            <span class="author-name">David Kim</span>
+                        <h3 class="article-title">Crypto vs. Stocks: Where to Invest?</h3>
+                        <p class="article-excerpt">A comprehensive comparison of cryptocurrency and traditional stock
+                            investments.</p>
+                        <div class="article-footer">
+                            <div class="author-info">
+                                <div class="author-avatar"><i class="fas fa-user"></i></div>
+                                <span>David Lee</span>
+                            </div>
+                            <a href="#" class="read-more">Read →</a>
                         </div>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </article>
+                </div>
 
-                <article class="blog-card" data-category="tips">
-                    <div class="card-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <div class="card-badge">Financial Tips</div>
+                <!-- Article 6 -->
+                <div class="article-card" data-category="budgeting">
+                    <div class="article-image">
+                        <i class="fas fa-calculator"></i>
+                        <span class="article-badge">Budgeting</span>
                     </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="date">March 6, 2024</span>
-                            <span class="read-time">4 min read</span>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="meta-item"><i class="fas fa-calendar"></i> Dec 10, 2023</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> 5 min</span>
                         </div>
-                        <h3>10 Smart Money Habits That Will Transform Your Finances</h3>
-                        <p>Discover simple yet powerful habits that can dramatically improve your financial health and help you build lasting wealth.</p>
-                        <div class="card-author">
-                            <span class="author-name">Lisa Thompson</span>
+                        <h3 class="article-title">Debt Snowball vs. Debt Avalanche</h3>
+                        <p class="article-excerpt">Which debt repayment strategy is right for you? We break down both
+                            methods.</p>
+                        <div class="article-footer">
+                            <div class="author-info">
+                                <div class="author-avatar"><i class="fas fa-user"></i></div>
+                                <span>Emma Davis</span>
+                            </div>
+                            <a href="#" class="read-more">Read →</a>
                         </div>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </article>
+                </div>
 
-                <article class="blog-card" data-category="investment">
-                    <div class="card-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="card-badge">Investment</div>
+                <!-- Article 7 -->
+                <div class="article-card" data-category="fintech">
+                    <div class="article-image">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span class="article-badge">Fintech</span>
                     </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="date">March 4, 2024</span>
-                            <span class="read-time">9 min read</span>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="meta-item"><i class="fas fa-calendar"></i> Dec 5, 2023</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> 4 min</span>
                         </div>
-                        <h3>Risk Management in Investment: A Comprehensive Approach</h3>
-                        <p>Learn essential risk management strategies to protect your investments and maximize returns in volatile markets.</p>
-                        <div class="card-author">
-                            <span class="author-name">Alex Patel</span>
+                        <h3 class="article-title">Best Personal Finance Apps of 2024</h3>
+                        <p class="article-excerpt">Our top picks for apps that make managing your money easier than
+                            ever.</p>
+                        <div class="article-footer">
+                            <div class="author-info">
+                                <div class="author-avatar"><i class="fas fa-user"></i></div>
+                                <span>Tom Anderson</span>
+                            </div>
+                            <a href="#" class="read-more">Read →</a>
                         </div>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </article>
+                </div>
 
-                <article class="blog-card" data-category="budgeting">
-                    <div class="card-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="card-badge">Budgeting</div>
+                <!-- Article 8 -->
+                <div class="article-card" data-category="tips">
+                    <div class="article-image">
+                        <i class="fas fa-wallet"></i>
+                        <span class="article-badge">Money Tips</span>
                     </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="date">March 2, 2024</span>
-                            <span class="read-time">5 min read</span>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="meta-item"><i class="fas fa-calendar"></i> Nov 30, 2023</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> 3 min</span>
                         </div>
-                        <h3>50/30/20 Rule: The Ultimate Budgeting Method</h3>
-                        <p>Master the 50/30/20 budgeting rule and learn how to allocate your income effectively for needs, wants, and savings.</p>
-                        <div class="card-author">
-                            <span class="author-name">Sarah Johnson</span>
+                        <h3 class="article-title">Emergency Fund: How Much Do You Need?</h3>
+                        <p class="article-excerpt">Calculate the right emergency fund size for your lifestyle and secure
+                            your future.</p>
+                        <div class="article-footer">
+                            <div class="author-info">
+                                <div class="author-avatar"><i class="fas fa-user"></i></div>
+                                <span>Rachel Green</span>
+                            </div>
+                            <a href="#" class="read-more">Read →</a>
                         </div>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </article>
-            </div>
-            
-            <div class="load-more">
-                <button class="btn btn-secondary">
-                    <i class="fas fa-plus"></i>
-                    Load More Articles
-                </button>
-            </div>
-        </div>
-    </section>
+                </div>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2>Stay Updated with Financial Insights</h2>
-                <p>Get the latest financial tips, market updates, and expert advice delivered directly to your inbox.</p>
-                <form class="newsletter-form">
-                    <div class="form-group">
-                        <input type="email" placeholder="Enter your email address" required>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Subscribe
-                        </button>
+                <!-- Article 9 -->
+                <div class="article-card" data-category="investing">
+                    <div class="article-image">
+                        <i class="fas fa-chart-pie"></i>
+                        <span class="article-badge">Investing</span>
                     </div>
-                </form>
-                <p class="newsletter-note">Join 10,000+ subscribers. Unsubscribe anytime.</p>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="meta-item"><i class="fas fa-calendar"></i> Nov 25, 2023</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> 6 min</span>
+                        </div>
+                        <h3 class="article-title">Index Funds: The Smart Investor's Choice</h3>
+                        <p class="article-excerpt">Why Warren Buffett recommends index funds and how to get started.</p>
+                        <div class="article-footer">
+                            <div class="author-info">
+                                <div class="author-avatar"><i class="fas fa-user"></i></div>
+                                <span>James Wilson</span>
+                            </div>
+                            <a href="#" class="read-more">Read →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 10 -->
+                <div class="article-card" data-category="budgeting">
+                    <div class="article-image">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="article-badge">Budgeting</span>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="meta-item"><i class="fas fa-calendar"></i> Nov 20, 2023</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> 4 min</span>
+                        </div>
+                        <h3 class="article-title">Stop Impulse Buying: 7 Proven Techniques</h3>
+                        <p class="article-excerpt">Practical strategies to curb unnecessary spending and stick to your
+                            budget.</p>
+                        <div class="article-footer">
+                            <div class="author-info">
+                                <div class="author-avatar"><i class="fas fa-user"></i></div>
+                                <span>Nina Patel</span>
+                            </div>
+                            <a href="#" class="read-more">Read →</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -283,7 +518,7 @@
                         <i class="fas fa-chart-line"></i>
                         <span>Nextomic</span>
                     </div>
-                    <p>Empowering your financial future with cutting-edge technology and personalized solutions.</p>
+                    <p>Professional financial solutions.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -297,16 +532,16 @@
                         <li><a href="services.html">Personal Finance</a></li>
                         <li><a href="services.html">Investment Planning</a></li>
                         <li><a href="services.html">Loan Advisory</a></li>
-                        <li><a href="services.html">Tax Calculators</a></li>
+                        <li><a href="calculator.html">Calculators</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>AI Tools</h3>
+                    <h3>Tools</h3>
                     <ul>
-                        <li><a href="ai-tools.html">AI Chat Assistant</a></li>
-                        <li><a href="ai-tools.html">Spending Analyzer</a></li>
-                        <li><a href="ai-tools.html">Investment Predictor</a></li>
-                        <li><a href="ai-tools.html">Budget Planner</a></li>
+                        <li><a href="calculator.html">All Calculators</a></li>
+                        <li><a href="expense-tracker.html">Expense Tracker</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="demo.html">Try Demo</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -315,45 +550,40 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Nextomic. All rights reserved.copy; 2024 Nextomic. All rights reserved. | Owned by AtomNext Solutions</p>
+                <p>&copy; 2024 Nextomic. All rights reserved. | Owned by AtomNext Solutions</p>
             </div>
         </div>
     </footer>
 
-    <!-- AI Chat Widget -->
-    <div class="chat-widget" id="chatWidget">
-        <div class="chat-toggle" id="chatToggle">
-            <i class="fas fa-comments"></i>
-        </div>
-        <div class="chat-container" id="chatContainer">
-            <div class="chat-header">
-                <h4>AI Assistant</h4>
-                <button class="chat-close" id="chatClose">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="chat-messages" id="chatMessages">
-                <div class="message bot-message">
-                    <div class="message-content">
-                        Hi! I can help you find relevant financial articles or answer questions about our blog content. What would you like to know?
-                    </div>
-                </div>
-            </div>
-            <div class="chat-input">
-                <input type="text" id="chatInput" placeholder="Ask about our articles...">
-                <button id="chatSend">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Custom JavaScript -->
     <script src="assets/js/main.js"></script>
+    <script>
+        // Filter functionality
+        const pills = document.querySelectorAll('.pill');
+        const cards = document.querySelectorAll('.article-card');
+
+        pills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                pills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+
+                const filter = pill.getAttribute('data-filter');
+
+                cards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
-</html> 
+
+</html>

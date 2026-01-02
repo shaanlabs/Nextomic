@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nextomic – Complete Finance Solutions</title>
     <meta name="description" content="Empowering Your Financial Future with AI-driven financial solutions">
-    
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Anime.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    
+
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -29,13 +34,13 @@
                 <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="ai-tools.html" class="nav-link">AI Tools</a></li>
                 <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                 <li class="nav-item"><a href="expense-tracker.html" class="nav-link">Expenses</a></li>
+                <li class="nav-item"><a href="calculator.html" class="nav-link">Calculator</a></li>
+                <li class="nav-item"><a href="demo.html" class="nav-link">Demo</a></li>
                 <li class="nav-item"><a href="tools.html" class="nav-link">Tools</a></li>
                 <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-item"><button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -53,7 +58,7 @@
                     Empowering Your Financial Future
                 </h1>
                 <p class="hero-subtitle">
-                    Complete financial solutions powered by AI technology. 
+                    Complete financial solutions powered by AI technology.
                     Transform your financial journey with intelligent insights and personalized strategies.
                 </p>
                 <div class="hero-buttons">
@@ -106,7 +111,7 @@
                 <h2><i class="fas fa-brain"></i> AI-Powered Financial Insights</h2>
                 <p>Get intelligent recommendations and predictions powered by advanced machine learning</p>
             </div>
-            
+
             <div class="ai-insights-grid">
                 <div class="ai-insight-card">
                     <div class="insight-header">
@@ -180,6 +185,76 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="ai-insight-card">
+                    <div class="insight-header">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Portfolio Diversification</h3>
+                    </div>
+                    <div class="diversification-chart">
+                        <div class="allocation-item">
+                            <span class="asset-type">Stocks</span>
+                            <div class="allocation-bar">
+                                <div class="allocation-fill" style="width: 45%; background: var(--accent-gradient);">
+                                </div>
+                            </div>
+                            <span class="percentage">45%</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span class="asset-type">Bonds</span>
+                            <div class="allocation-bar">
+                                <div class="allocation-fill"
+                                    style="width: 30%; background: linear-gradient(135deg, #4CAF50, #45a049);"></div>
+                            </div>
+                            <span class="percentage">30%</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span class="asset-type">Crypto</span>
+                            <div class="allocation-bar">
+                                <div class="allocation-fill"
+                                    style="width: 25%; background: linear-gradient(135deg, #FF9800, #F57C00);"></div>
+                            </div>
+                            <span class="percentage">25%</span>
+                        </div>
+                    </div>
+                    <p class="insight-text">Well-balanced portfolio across multiple asset classes</p>
+                </div>
+
+                <div class="ai-insight-card">
+                    <div class="insight-header">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Investment Opportunities</h3>
+                    </div>
+                    <div class="opportunities-list">
+                        <div class="opportunity-item">
+                            <div class="opportunity-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="opportunity-details">
+                                <span class="opportunity-name">Tech ETF</span>
+                                <span class="opportunity-score positive">High Potential</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-item">
+                            <div class="opportunity-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="opportunity-details">
+                                <span class="opportunity-name">Green Energy</span>
+                                <span class="opportunity-score positive">Growing Sector</span>
+                            </div>
+                        </div>
+                        <div class="opportunity-item">
+                            <div class="opportunity-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="opportunity-details">
+                                <span class="opportunity-name">Dividend Stocks</span>
+                                <span class="opportunity-score">Stable Returns</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -197,7 +272,8 @@
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>AI-Powered Insights</h3>
-                    <p>Advanced artificial intelligence provides personalized financial recommendations and market analysis.</p>
+                    <p>Advanced artificial intelligence provides personalized financial recommendations and market
+                        analysis.</p>
                 </div>
                 <div class="feature-card no-js">
                     <div class="feature-icon">
@@ -219,6 +295,20 @@
                     </div>
                     <h3>Expert Support</h3>
                     <p>Access to financial advisors and customer support team available 24/7.</p>
+                </div>
+                <div class="feature-card no-js">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Portfolio Management</h3>
+                    <p>Smart portfolio tracking and rebalancing recommendations powered by AI algorithms.</p>
+                </div>
+                <div class="feature-card no-js">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Tax Planning</h3>
+                    <p>Optimize your tax strategy with intelligent calculators and expert guidance.</p>
                 </div>
             </div>
         </div>
@@ -344,4 +434,5 @@
     <!-- Custom JavaScript -->
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

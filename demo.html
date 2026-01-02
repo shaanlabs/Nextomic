@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Demo - Nextomic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <style>
+        /* Clean Demo Page - Orange & Beige Only */
+        .demo-hero {
+            background: var(--bg-secondary);
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+
+        .demo-hero h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .demo-hero p {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        @media (min-width: 768px) {
+            .demo-hero {
+                padding: 70px 0 40px;
+            }
+
+            .demo-hero h1 {
+                font-size: 42px;
+            }
+        }
+
+        /* Tools Section */
+        .tools-section {
+            background: var(--bg-primary);
+            padding: 32px 0;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Tool Card - Clean & Minimal */
+        .tool-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.2s;
+        }
+
+        .tool-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 12px rgba(255, 109, 31, 0.1);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .tool-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--color-primary);
+        }
+
+        .tool-header h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .tool-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .tool-input-group {
+            margin-bottom: 12px;
+        }
+
+        .tool-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .tool-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: var(--font-family);
+            transition: border-color 0.2s;
+        }
+
+        .tool-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .tool-slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: var(--bg-secondary);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .tool-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            cursor: pointer;
+        }
+
+        .tool-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            cursor: pointer;
+            border: none;
+        }
+
+        .tool-result {
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .result-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .tool-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 12px;
+        }
+
+        .tool-btn:hover {
+            background: var(--color-primary-hover);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-chart-line"></i> Nextomic</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="expense-tracker.html" class="nav-link">Expenses</a></li>
+                <li class="nav-item"><a href="calculator.html" class="nav-link">Calculator</a></li>
+                <li class="nav-item"><a href="demo.html" class="nav-link active">Demo</a></li>
+                <li class="nav-item"><a href="tools.html" class="nav-link">Tools</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="demo-hero">
+        <div class="container">
+            <h1>Try Our Tools</h1>
+            <p>Interactive demos of our financial calculators</p>
+        </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="tools-section">
+        <div class="container">
+            <div class="tools-grid">
+
+                <!-- EMI Calculator -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-home"></i></div>
+                        <h3>EMI Calculator</h3>
+                    </div>
+                    <p class="tool-description">Calculate monthly installments for your loan</p>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Loan Amount: $<span id="emi-amount-val">250000</span></label>
+                        <input type="range" class="tool-slider" id="emi-amount" min="10000" max="1000000" value="250000"
+                            step="10000">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Interest Rate: <span id="emi-rate-val">7.5</span>%</label>
+                        <input type="range" class="tool-slider" id="emi-rate" min="1" max="20" value="7.5" step="0.1">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Tenure: <span id="emi-years-val">20</span> years</label>
+                        <input type="range" class="tool-slider" id="emi-years" min="1" max="30" value="20" step="1">
+                    </div>
+                    <div class="tool-result">
+                        <div class="result-row">
+                            <span class="result-label">Monthly EMI</span>
+                            <span class="result-value" id="emi-result">$2,012</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Total Interest</span>
+                            <span class="result-value" id="emi-interest">$232,880</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Savings Goal -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-piggy-bank"></i></div>
+                        <h3>Savings Goal</h3>
+                    </div>
+                    <p class="tool-description">Plan how much to save monthly</p>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Target Amount: $<span id="save-target-val">50000</span></label>
+                        <input type="range" class="tool-slider" id="save-target" min="1000" max="100000" value="50000"
+                            step="1000">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Time Period: <span id="save-years-val">5</span> years</label>
+                        <input type="range" class="tool-slider" id="save-years" min="1" max="20" value="5" step="1">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Current Savings: $<span id="save-current-val">5000</span></label>
+                        <input type="range" class="tool-slider" id="save-current" min="0" max="50000" value="5000"
+                            step="1000">
+                    </div>
+                    <div class="tool-result">
+                        <div class="result-row">
+                            <span class="result-label">Monthly Savings</span>
+                            <span class="result-value" id="save-monthly">$750</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Progress</span>
+                            <span class="result-value" id="save-progress">10%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investment Returns -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Investment Returns</h3>
+                    </div>
+                    <p class="tool-description">Calculate potential returns on investments</p>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Initial Investment: $<span id="inv-principal-val">10000</span></label>
+                        <input type="range" class="tool-slider" id="inv-principal" min="1000" max="100000" value="10000"
+                            step="1000">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Annual Return: <span id="inv-return-val">12</span>%</label>
+                        <input type="range" class="tool-slider" id="inv-return" min="1" max="25" value="12" step="0.5">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Duration: <span id="inv-years-val">10</span> years</label>
+                        <input type="range" class="tool-slider" id="inv-years" min="1" max="30" value="10" step="1">
+                    </div>
+                    <div class="tool-result">
+                        <div class="result-row">
+                            <span class="result-label">Final Amount</span>
+                            <span class="result-value" id="inv-final">$31,058</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Total Gain</span>
+                            <span class="result-value" id="inv-gain">$21,058</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tax Calculator -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-receipt"></i></div>
+                        <h3>Tax Calculator</h3>
+                    </div>
+                    <p class="tool-description">Estimate your income tax liability</p>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Annual Income: $<span id="tax-income-val">75000</span></label>
+                        <input type="range" class="tool-slider" id="tax-income" min="10000" max="200000" value="75000"
+                            step="5000">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Deductions: $<span id="tax-deduct-val">15000</span></label>
+                        <input type="range" class="tool-slider" id="tax-deduct" min="0" max="50000" value="15000"
+                            step="1000">
+                    </div>
+                    <div class="tool-result">
+                        <div class="result-row">
+                            <span class="result-label">Taxable Income</span>
+                            <span class="result-value" id="tax-taxable">$60,000</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Estimated Tax</span>
+                            <span class="result-value" id="tax-amount">$13,200</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Retirement Planner -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-umbrella-beach"></i></div>
+                        <h3>Retirement Planner</h3>
+                    </div>
+                    <p class="tool-description">Plan for your retirement savings</p>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Current Age: <span id="ret-age-val">30</span></label>
+                        <input type="range" class="tool-slider" id="ret-age" min="20" max="60" value="30" step="1">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Monthly Savings: $<span id="ret-monthly-val">500</span></label>
+                        <input type="range" class="tool-slider" id="ret-monthly" min="100" max="5000" value="500"
+                            step="100">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Expected Return: <span id="ret-return-val">8</span>%</label>
+                        <input type="range" class="tool-slider" id="ret-return" min="3" max="15" value="8" step="0.5">
+                    </div>
+                    <div class="tool-result">
+                        <div class="result-row">
+                            <span class="result-label">At Age 65</span>
+                            <span class="result-value" id="ret-total">$1,117,500</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Contribution</span>
+                            <span class="result-value" id="ret-contrib">$210,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SIP Calculator -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-coins"></i></div>
+                        <h3>SIP Calculator</h3>
+                    </div>
+                    <p class="tool-description">Systematic Investment Plan calculator</p>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Monthly SIP: $<span id="sip-monthly-val">1000</span></label>
+                        <input type="range" class="tool-slider" id="sip-monthly" min="100" max="10000" value="1000"
+                            step="100">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Expected Return: <span id="sip-return-val">12</span>%</label>
+                        <input type="range" class="tool-slider" id="sip-return" min="5" max="20" value="12" step="0.5">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Duration: <span id="sip-years-val">10</span> years</label>
+                        <input type="range" class="tool-slider" id="sip-years" min="1" max="30" value="10" step="1">
+                    </div>
+                    <div class="tool-result">
+                        <div class="result-row">
+                            <span class="result-label">Maturity Value</span>
+                            <span class="result-value" id="sip-maturity">$230,386</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Invested Amount</span>
+                            <span class="result-value" id="sip-invested">$120,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget Calculator -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <h3>Budget Calculator</h3>
+                    </div>
+                    <p class="tool-description">Plan your monthly budget (50/30/20 rule)</p>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Monthly Income: $<span id="budget-income-val">5000</span></label>
+                        <input type="range" class="tool-slider" id="budget-income" min="1000" max="20000" value="5000"
+                            step="500">
+                    </div>
+                    <div class="tool-result">
+                        <div class="result-row">
+                            <span class="result-label">Needs (50%)</span>
+                            <span class="result-value" id="budget-needs">$2,500</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Wants (30%)</span>
+                            <span class="result-value" id="budget-wants">$1,500</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Savings (20%)</span>
+                            <span class="result-value" id="budget-savings">$1,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Debt Payoff -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-money-bill-wave"></i></div>
+                        <h3>Debt Payoff</h3>
+                    </div>
+                    <p class="tool-description">Calculate debt payoff timeline</p>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Total Debt: $<span id="debt-total-val">25000</span></label>
+                        <input type="range" class="tool-slider" id="debt-total" min="1000" max="100000" value="25000"
+                            step="1000">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Monthly Payment: $<span id="debt-payment-val">1000</span></label>
+                        <input type="range" class="tool-slider" id="debt-payment" min="100" max="5000" value="1000"
+                            step="100">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Interest Rate: <span id="debt-rate-val">15</span>%</label>
+                        <input type="range" class="tool-slider" id="debt-rate" min="0" max="30" value="15" step="0.5">
+                    </div>
+                    <div class="tool-result">
+                        <div class="result-row">
+                            <span class="result-label">Payoff Time</span>
+                            <span class="result-value" id="debt-months">28 months</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Total Interest</span>
+                            <span class="result-value" id="debt-interest">$3,245</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Nextomic</span>
+                    </div>
+                    <p>Professional financial solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Personal Finance</a></li>
+                        <li><a href="services.html">Investment Planning</a></li>
+                        <li><a href="services.html">Loan Advisory</a></li>
+                        <li><a href="calculator.html">Calculators</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="calculator.html">All Calculators</a></li>
+                        <li><a href="expense-tracker.html">Expense Tracker</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="demo.html">Try Demo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nextomic. All rights reserved. | Owned by AtomNext Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // EMI Calculator
+        const updateEMI = () => {
+            const amount = parseFloat(document.getElementById('emi-amount').value);
+            const rate = parseFloat(document.getElementById('emi-rate').value) / 12 / 100;
+            const years = parseFloat(document.getElementById('emi-years').value);
+            const months = years * 12;
+
+            document.getElementById('emi-amount-val').textContent = amount.toLocaleString();
+            document.getElementById('emi-rate-val').textContent = document.getElementById('emi-rate').value;
+            document.getElementById('emi-years-val').textContent = years;
+
+            const emi = (amount * rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+            const total = emi * months;
+            const interest = total - amount;
+
+            document.getElementById('emi-result').textContent = '$' + Math.round(emi).toLocaleString();
+            document.getElementById('emi-interest').textContent = '$' + Math.round(interest).toLocaleString();
+        };
+
+        document.getElementById('emi-amount').addEventListener('input', updateEMI);
+        document.getElementById('emi-rate').addEventListener('input', updateEMI);
+        document.getElementById('emi-years').addEventListener('input', updateEMI);
+        updateEMI();
+
+        // Savings Goal
+        const updateSavings = () => {
+            const target = parseFloat(document.getElementById('save-target').value);
+            const years = parseFloat(document.getElementById('save-years').value);
+            const current = parseFloat(document.getElementById('save-current').value);
+
+            document.getElementById('save-target-val').textContent = target.toLocaleString();
+            document.getElementById('save-years-val').textContent = years;
+            document.getElementById('save-current-val').textContent = current.toLocaleString();
+
+            const remaining = target - current;
+            const monthly = remaining / (years * 12);
+            const progress = Math.round((current / target) * 100);
+
+            document.getElementById('save-monthly').textContent = '$' + Math.round(monthly).toLocaleString();
+            document.getElementById('save-progress').textContent = progress + '%';
+        };
+
+        document.getElementById('save-target').addEventListener('input', updateSavings);
+        document.getElementById('save-years').addEventListener('input', updateSavings);
+        document.getElementById('save-current').addEventListener('input', updateSavings);
+        updateSavings();
+
+        // Investment Returns
+        const updateInvestment = () => {
+            const principal = parseFloat(document.getElementById('inv-principal').value);
+            const rate = parseFloat(document.getElementById('inv-return').value) / 100;
+            const years = parseFloat(document.getElementById('inv-years').value);
+
+            document.getElementById('inv-principal-val').textContent = principal.toLocaleString();
+            document.getElementById('inv-return-val').textContent = document.getElementById('inv-return').value;
+            document.getElementById('inv-years-val').textContent = years;
+
+            const final = principal * Math.pow(1 + rate, years);
+            const gain = final - principal;
+
+            document.getElementById('inv-final').textContent = '$' + Math.round(final).toLocaleString();
+            document.getElementById('inv-gain').textContent = '$' + Math.round(gain).toLocaleString();
+        };
+
+        document.getElementById('inv-principal').addEventListener('input', updateInvestment);
+        document.getElementById('inv-return').addEventListener('input', updateInvestment);
+        document.getElementById('inv-years').addEventListener('input', updateInvestment);
+        updateInvestment();
+
+        // Tax Calculator
+        const updateTax = () => {
+            const income = parseFloat(document.getElementById('tax-income').value);
+            const deduct = parseFloat(document.getElementById('tax-deduct').value);
+
+            document.getElementById('tax-income-val').textContent = income.toLocaleString();
+            document.getElementById('tax-deduct-val').textContent = deduct.toLocaleString();
+
+            const taxable = income - deduct;
+            const tax = taxable * 0.22; // Simple 22% tax rate
+
+            document.getElementById('tax-taxable').textContent = '$' + taxable.toLocaleString();
+            document.getElementById('tax-amount').textContent = '$' + Math.round(tax).toLocaleString();
+        };
+
+        document.getElementById('tax-income').addEventListener('input', updateTax);
+        document.getElementById('tax-deduct').addEventListener('input', updateTax);
+        updateTax();
+
+        // Retirement Planner
+        const updateRetirement = () => {
+            const age = parseFloat(document.getElementById('ret-age').value);
+            const monthly = parseFloat(document.getElementById('ret-monthly').value);
+            const rate = parseFloat(document.getElementById('ret-return').value) / 100 / 12;
+
+            document.getElementById('ret-age-val').textContent = age;
+            document.getElementById('ret-monthly-val').textContent = monthly;
+            document.getElementById('ret-return-val').textContent = document.getElementById('ret-return').value;
+
+            const years = 65 - age;
+            const months = years * 12;
+            const total = monthly * ((Math.pow(1 + rate, months) - 1) / rate) * (1 + rate);
+            const contrib = monthly * months;
+
+            document.getElementById('ret-total').textContent = '$' + Math.round(total).toLocaleString();
+            document.getElementById('ret-contrib').textContent = '$' + contrib.toLocaleString();
+        };
+
+        document.getElementById('ret-age').addEventListener('input', updateRetirement);
+        document.getElementById('ret-monthly').addEventListener('input', updateRetirement);
+        document.getElementById('ret-return').addEventListener('input', updateRetirement);
+        updateRetirement();
+
+        // SIP Calculator
+        const updateSIP = () => {
+            const monthly = parseFloat(document.getElementById('sip-monthly').value);
+            const rate = parseFloat(document.getElementById('sip-return').value) / 100 / 12;
+            const years = parseFloat(document.getElementById('sip-years').value);
+            const months = years * 12;
+
+            document.getElementById('sip-monthly-val').textContent = monthly;
+            document.getElementById('sip-return-val').textContent = document.getElementById('sip-return').value;
+            document.getElementById('sip-years-val').textContent = years;
+
+            const maturity = monthly * ((Math.pow(1 + rate, months) - 1) / rate) * (1 + rate);
+            const invested = monthly * months;
+
+            document.getElementById('sip-maturity').textContent = '$' + Math.round(maturity).toLocaleString();
+            document.getElementById('sip-invested').textContent = '$' + invested.toLocaleString();
+        };
+
+        document.getElementById('sip-monthly').addEventListener('input', updateSIP);
+        document.getElementById('sip-return').addEventListener('input', updateSIP);
+        document.getElementById('sip-years').addEventListener('input', updateSIP);
+        updateSIP();
+
+        // Budget Calculator
+        const updateBudget = () => {
+            const income = parseFloat(document.getElementById('budget-income').value);
+
+            document.getElementById('budget-income-val').textContent = income.toLocaleString();
+
+            document.getElementById('budget-needs').textContent = '$' + (income * 0.5).toLocaleString();
+            document.getElementById('budget-wants').textContent = '$' + (income * 0.3).toLocaleString();
+            document.getElementById('budget-savings').textContent = '$' + (income * 0.2).toLocaleString();
+        };
+
+        document.getElementById('budget-income').addEventListener('input', updateBudget);
+        updateBudget();
+
+        // Debt Payoff
+        const updateDebt = () => {
+            const total = parseFloat(document.getElementById('debt-total').value);
+            const payment = parseFloat(document.getElementById('debt-payment').value);
+            const rate = parseFloat(document.getElementById('debt-rate').value) / 100 / 12;
+
+            document.getElementById('debt-total-val').textContent = total.toLocaleString();
+            document.getElementById('debt-payment-val').textContent = payment;
+            document.getElementById('debt-rate-val').textContent = document.getElementById('debt-rate').value;
+
+            const months = Math.log(payment / (payment - total * rate)) / Math.log(1 + rate);
+            const totalPaid = payment * months;
+            const interest = totalPaid - total;
+
+            document.getElementById('debt-months').textContent = Math.ceil(months) + ' months';
+            document.getElementById('debt-interest').textContent = '$' + Math.round(interest).toLocaleString();
+        };
+
+        document.getElementById('debt-total').addEventListener('input', updateDebt);
+        document.getElementById('debt-payment').addEventListener('input', updateDebt);
+        document.getElementById('debt-rate').addEventListener('input', updateDebt);
+        updateDebt();
+    </script>
+</body>
+
+</html>

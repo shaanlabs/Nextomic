@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-One Financial Calculator - Nextomic</title>
+    <meta name="description" content="Comprehensive financial calculator with 35+ tools in one place">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/calculator.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-chart-line"></i> Nextomic</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="expense-tracker.html" class="nav-link">Expenses</a></li>
+                <li class="nav-item"><a href="calculator.html" class="nav-link active">Calculator</a></li>
+                <li class="nav-item"><a href="demo.html" class="nav-link">Demo</a></li>
+                <li class="nav-item"><a href="tools.html" class="nav-link">Tools</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1><i class="fas fa-calculator"></i> All-in-One Financial Calculator</h1>
+            <p>One powerful calculator with 35+ tools - Loans, Investments, Tax, Retirement, and More!</p>
+        </div>
+    </section>
+
+    <!-- Main Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-wrapper">
+
+                <!-- Sidebar with Calculator Categories -->
+                <div class="calculator-sidebar">
+                    <div class="sidebar-header">
+                        <i class="fas fa-list"></i>
+                        <h3>Calculator Types</h3>
+                    </div>
+
+                    <!-- Search Box -->
+                    <div class="calculator-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="calcSearch" placeholder="Search calculators...">
+                    </div>
+
+                    <!-- Category: Loans & Mortgages -->
+                    <div class="calc-category">
+                        <div class="category-header">
+                            <i class="fas fa-home"></i>
+                            <span>Loans & Mortgages</span>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="category-items">
+                            <div class="calc-item active" data-calc="home-loan">
+                                <i class="fas fa-house-user"></i>
+                                <span>Home Loan EMI</span>
+                            </div>
+                            <div class="calc-item" data-calc="car-loan">
+                                <i class="fas fa-car"></i>
+                                <span>Car Loan</span>
+                            </div>
+                            <div class="calc-item" data-calc="personal-loan">
+                                <i class="fas fa-user"></i>
+                                <span>Personal Loan</span>
+                            </div>
+                            <div class="calc-item" data-calc="education-loan">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Education Loan</span>
+                            </div>
+                            <div class="calc-item" data-calc="loan-compare">
+                                <i class="fas fa-balance-scale"></i>
+                                <span>Loan Comparison</span>
+                            </div>
+                            <div class="calc-item" data-calc="prepayment">
+                                <i class="fas fa-fast-forward"></i>
+                                <span>Prepayment Impact</span>
+                            </div>
+                            <div class="calc-item" data-calc="debt-consolidation">
+                                <i class="fas fa-compress-arrows-alt"></i>
+                                <span>Debt Consolidation</span>
+                            </div>
+                            <div class="calc-item" data-calc="credit-card">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Credit Card Payoff</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Investments -->
+                    <div class="calc-category">
+                        <div class="category-header">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Investments</span>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="category-items">
+                            <div class="calc-item" data-calc="sip">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>SIP Calculator</span>
+                            </div>
+                            <div class="calc-item" data-calc="lumpsum">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Lump Sum Investment</span>
+                            </div>
+                            <div class="calc-item" data-calc="stock-return">
+                                <i class="fas fa-chart-area"></i>
+                                <span>Stock Returns</span>
+                            </div>
+                            <div class="calc-item" data-calc="mutual-fund">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Mutual Funds</span>
+                            </div>
+                            <div class="calc-item" data-calc="fd">
+                                <i class="fas fa-piggy-bank"></i>
+                                <span>Fixed Deposit (FD)</span>
+                            </div>
+                            <div class="calc-item" data-calc="rd">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>Recurring Deposit (RD)</span>
+                            </div>
+                            <div class="calc-item" data-calc="ppf">
+                                <i class="fas fa-landmark"></i>
+                                <span>PPF Calculator</span>
+                            </div>
+                            <div class="calc-item" data-calc="nps">
+                                <i class="fas fa-umbrella"></i>
+                                <span>NPS Calculator</span>
+                            </div>
+                            <div class="calc-item" data-calc="cagr">
+                                <i class="fas fa-percentage"></i>
+                                <span>CAGR Calculator</span>
+                            </div>
+                            <div class="calc-item" data-calc="roi">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>ROI Calculator</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Retirement -->
+                    <div class="calc-category">
+                        <div class="category-header">
+                            <i class="fas fa-umbrella-beach"></i>
+                            <span>Retirement Planning</span>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="category-items">
+                            <div class="calc-item" data-calc="retirement">
+                                <i class="fas fa-calendar-day"></i>
+                                <span>Retirement Corpus</span>
+                            </div>
+                            <div class="calc-item" data-calc="401k">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                                <span>401(k) Calculator</span>
+                            </div>
+                            <div class="calc-item" data-calc="pension">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <span>Pension Estimator</span>
+                            </div>
+                            <div class="calc-item" data-calc="life-insurance">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Life Insurance Need</span>
+                            </div>
+                            <div class="calc-item" data-calc="emergency-fund">
+                                <i class="fas fa-medkit"></i>
+                                <span>Emergency Fund</span>
+                            </div>
+                            <div class="calc-item" data-calc="college-savings">
+                                <i class="fas fa-school"></i>
+                                <span>College Savings</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Tax -->
+                    <div class="calc-category">
+                        <div class="category-header">
+                            <i class="fas fa-receipt"></i>
+                            <span>Tax Calculators</span>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="category-items">
+                            <div class="calc-item" data-calc="income-tax">
+                                <i class="fas fa-file-invoice"></i>
+                                <span>Income Tax</span>
+                            </div>
+                            <div class="calc-item" data-calc="gst">
+                                <i class="fas fa-tags"></i>
+                                <span>GST Calculator</span>
+                            </div>
+                            <div class="calc-item" data-calc="capital-gains">
+                                <i class="fas fa-coins"></i>
+                                <span>Capital Gains Tax</span>
+                            </div>
+                            <div class="calc-item" data-calc="hra">
+                                <i class="fas fa-building"></i>
+                                <span>HRA Calculator</span>
+                            </div>
+                            <div class="calc-item" data-calc="tax-saving">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <span>Tax Savings (80C)</span>
+                            </div>
+                            <div class="calc-item" data-calc="property-tax">
+                                <i class="fas fa-home"></i>
+                                <span>Property Tax</span>
+                            </div>
+                            <div class="calc-item" data-calc="tds">
+                                <i class="fas fa-file-alt"></i>
+                                <span>TDS Calculator</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Budgeting -->
+                    <div class="calc-category">
+                        <div class="category-header">
+                            <i class="fas fa-wallet"></i>
+                            <span>Budgeting & Savings</span>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="category-items">
+                            <div class="calc-item" data-calc="budget-planner">
+                                <i class="fas fa-clipboard-list"></i>
+                                <span>Budget Planner</span>
+                            </div>
+                            <div class="calc-item" data-calc="savings-goal">
+                                <i class="fas fa-bullseye"></i>
+                                <span>Savings Goal</span>
+                            </div>
+                            <div class="calc-item" data-calc="inflation">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Inflation Impact</span>
+                            </div>
+                            <div class="calc-item" data-calc="net-worth">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span>Net Worth</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Others -->
+                    <div class="calc-category">
+                        <div class="category-header">
+                            <i class="fas fa-ellipsis-h"></i>
+                            <span>Other Tools</span>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="category-items">
+                            <div class="calc-item" data-calc="currency">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span>Currency Converter</span>
+                            </div>
+                            <div class="calc-item" data-calc="rent-vs-buy">
+                                <i class="fas fa-home"></i>
+                                <span>Rent vs Buy</span>
+                            </div>
+                            <div class="calc-item" data-calc="tip">
+                                <i class="fas fa-utensils"></i>
+                                <span>Tip Calculator</span>
+                            </div>
+                            <div class="calc-item" data-calc="compound-interest">
+                                <i class="fas fa-percent"></i>
+                                <span>Compound Interest</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Calculator Area -->
+                <div class="calculator-main">
+                    <!-- Calculator Header -->
+                    <div class="calc-main-header">
+                        <div class="calc-title">
+                            <i class="fas fa-house-user calc-icon"></i>
+                            <div>
+                                <h2 id="calcTitle">Home Loan EMI Calculator</h2>
+                                <p id="calcDescription">Calculate your monthly EMI, total interest, and loan details</p>
+                            </div>
+                        </div>
+                        <div class="calc-actions">
+                            <button class="btn-icon" onclick="resetCalculator()" title="Reset">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                            <button class="btn-icon" onclick="saveCalculation()" title="Save">
+                                <i class="fas fa-bookmark"></i>
+                            </button>
+                            <button class="btn-icon" onclick="printResults()" title="Print">
+                                <i class="fas fa-print"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Content -->
+                    <div class="calc-content">
+                        <div class="calc-inputs-section">
+                            <h3><i class="fas fa-edit"></i> Input Details</h3>
+
+                            <!-- Dynamic Input Area -->
+                            <div id="calculatorInputs">
+                                <!-- Inputs will be dynamically loaded based on selected calculator -->
+                            </div>
+
+                            <button class="btn btn-primary btn-calculate" onclick="calculate()">
+                                <i class="fas fa-calculator"></i>
+                                Calculate
+                            </button>
+                        </div>
+
+                        <div class="calc-results-section">
+                            <h3><i class="fas fa-chart-bar"></i> Results</h3>
+
+                            <!-- Dynamic Results Area -->
+                            <div id="calculatorResults">
+                                <!-- Results will be displayed here -->
+                            </div>
+
+                            <!-- Chart Area -->
+                            <div id="chartArea" class="chart-container" style="display: none;">
+                                <canvas id="resultChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Info/Tips Section -->
+                    <div class="calc-info">
+                        <div class="info-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <div>
+                                <h4>Smart Tip</h4>
+                                <p id="calculatorTip">Making prepayments can significantly reduce your total interest
+                                    burden and loan tenure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Nextomic</span>
+                    </div>
+                    <p>Empowering your financial future with cutting-edge technology and personalized solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tools.html">Tools</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Calculators</h3>
+                    <ul>
+                        <li><a href="#home-loan">Home Loan EMI</a></li>
+                        <li><a href="#sip">SIP Calculator</a></li>
+                        <li><a href="#retirement">Retirement Planning</a></li>
+                        <li><a href="#income-tax">Income Tax</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nextomic. All rights reserved. | Owned by AtomNext Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/calculator.js"></script>
+</body>
+
+</html>
